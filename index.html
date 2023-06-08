@@ -11,25 +11,135 @@
         <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-        <div class="app-workspace d-flex flex-column ps-2 pe-2">
+        <div class="app-workspace d-flex flex-column ps-2 pe-2 pb-2">
             <div class="d-flex fs-3 justify-content-between w-100" style="height: 40px;">
                 <div class="d-flex gap-3 align-center">
                     <i class="bi bi-bank" style="cursor: pointer;"></i>
-                    <i class="bi bi-sliders2" style="cursor: pointer;"></i>
+                    <i class="bi bi-layout-sidebar" style="cursor: pointer;" onclick="togglePanel()"></i>
                 </div>
                 <div class="d-flex flex-row-reverse">
-                    <i class="bi bi-gear" style="cursor: pointer;"></i>
+                    <i class="bi bi-sliders2" style="cursor: pointer;"></i>
                 </div>
             </div>
 
             <div class="d-flex gap-2 flex-row flex-grow-1">
-                <div class="d-flex flex-column align-items-stretch bg-primary" style="width: 300px;">
-                    <div class="fw-bold">Totals</div>
+                <div id="panel" class="d-flex flex-column align-items-stretch gap-2" style="width: 360px;">
+                    <div class="d-flex justify-content-between">
+                        <div class="fw-bold">Balances</div>
+                        <div class="text-end text-primary-emphasis">$3,598.45</div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div>Income</div>
+                        <div class="text-end text-success-emphasis">$2,598.45</div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div>Expenses</div>
+                        <div class="text-end text-danger-emphasis">$598.45</div>
+                    </div>
+                    <div class="d-flex gap-2 justify-content-between">
+                        <div class="fw-bold">Expenses</div>
+                        <div class="d-flex gap-2">
+                            <div style="cursor: pointer">
+                                <i class="bi bi-eye-slash"></i>
+                                Hide
+                            </div>
+                            <div style="cursor: pointer">
+                                <i class="bi bi-plus"></i>
+                                New
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                        <div class="fw-bold">Calendar</div>
+
+                        <div class="row">
+                            <div class="col text-center"><i class="bi bi-chevron-left"></i></div>
+                            <div class="col text-center">June</div>
+                            <div class="col text-center"><i class="bi bi-chevron-right"></i></div>
+                            <div class="col text-center">&nbsp;</div>
+                            <div class="col text-center"><i class="bi bi-chevron-left"></i></div>
+                            <div class="col text-center">2023</div>
+                            <div class="col text-center"><i class="bi bi-chevron-right"></i></div>
+                        </div>
+                            
+                        <div class="row">
+                            <div class="col text-center">Sun</div>
+                            <div class="col text-center">Mon</div>
+                            <div class="col text-center">Tue</div>
+                            <div class="col text-center">Wed</div>
+                            <div class="col text-center">Thu</div>
+                            <div class="col text-center">Fri</div>
+                            <div class="col text-center">Sat</div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col text-center">28</div>
+                            <div class="col text-center">29</div>
+                            <div class="col text-center">30</div>
+                            <div class="col text-center">31</div>
+                            <div class="col text-center">01</div>
+                            <div class="col text-center">02</div>
+                            <div class="col text-center">03</div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">04</div>
+                            <div class="col text-center">05</div>
+                            <div class="col text-center">06</div>
+                            <div class="col text-center">07</div>
+                            <div class="col text-center">08</div>
+                            <div class="col text-center">09</div>
+                            <div class="col text-center">10</div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">11</div>
+                            <div class="col text-center">12</div>
+                            <div class="col text-center">13</div>
+                            <div class="col text-center">14</div>
+                            <div class="col text-center">15</div>
+                            <div class="col text-center">16</div>
+                            <div class="col text-center">17</div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">18</div>
+                            <div class="col text-center">19</div>
+                            <div class="col text-center">20</div>
+                            <div class="col text-center">21</div>
+                            <div class="col text-center">22</div>
+                            <div class="col text-center">23</div>
+                            <div class="col text-center">24</div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">25</div>
+                            <div class="col text-center">26</div>
+                            <div class="col text-center">27</div>
+                            <div class="col text-center">28</div>
+                            <div class="col text-center">29</div>
+                            <div class="col text-center">30</div>
+                            <div class="col text-center">01</div>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">02</div>
+                            <div class="col text-center">03</div>
+                            <div class="col text-center">04</div>
+                            <div class="col text-center">05</div>
+                            <div class="col text-center">06</div>
+                            <div class="col text-center">07</div>
+                            <div class="col text-center">08</div>
+                        </div>
+                        <div class="row justify-content-md-center">
+                            <div class="col col-2 text-center" style="cursor:pointer;">Today</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="d-flex flex-grow-1 flex-column bg-warning">
+                
+                <div class="d-flex flex-grow-1 flex-column">
 
                 </div>
             </div>
+        </div>
+
+        <div class="btn-new bg-primary text-center align-center">
+            <i class="bi bi-lg bi-plus-lg" ></i>
         </div>
 
         <script src="index.js"></script>
