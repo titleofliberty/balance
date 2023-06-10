@@ -12,29 +12,26 @@ function togglePanel() {
 
 function calPopulate(date) {
     selectedDate = date;
-    var step = selectedDate.startOf("month").startOf("week");
     var calDates = $(".cal-date");
+    var step = selectedDate.startOf("month").startOf("week");
 
     $("#cal-month").text(months[selectedDate.month()]);
     $("#cal-year").text(selectedDate.year());
     calDates.each(function (index) {
         $(this).data("date", step.format("YYYY-MM-DD"));
         $(this).text(step.date());
-        console.log(step.month(), selectedDate.month());
+        $(this).removeClass("fw-bold");
+        $(this).removeClass("border");
+        $(this).removeClass("border-2");
+        $(this).removeClass("text-secondary");
         if (step.month() != selectedDate.month()) {
             $(this).addClass("text-secondary");
         }
         else {
-            $(this).removeClass("text-secondary");
             if (step.date() == selectedDate.date()) {
                 $(this).addClass("fw-bold");
                 $(this).addClass("border");
                 $(this).addClass("border-2");
-            }
-            else {
-                $(this).removeClass("fw-bold");
-                $(this).removeClass("border");
-                $(this).removeClass("border-2");
             }
         }   
         step = step.add(1, "day");
@@ -49,6 +46,24 @@ function calToday() {
 function calGoTo(date) {
     console.log("calGoTo", date);
     calPopulate(dayjs(date));
+}
+
+function calMonth(go) {
+    if (go == "prev") {
+        calPopulate(selectedDate.subtract(1, "month"));
+    }
+    else if (go == "next") {
+        calPopulate(selectedDate.add(1, "month"));
+    }
+}
+
+function calYear(go) {
+    if (go == "prev") {
+        calPopulate(selectedDate.subtract(1, "year"));
+    }
+    else if (go == "next") {
+        calPopulate(selectedDate.add(1, "year"));
+    }
 }
 
 $(".cal-date").on("click", function () {
