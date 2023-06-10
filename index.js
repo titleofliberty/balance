@@ -5,11 +5,6 @@ var win = nw.Window.get();
 var selectedDate = new Date();
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-function togglePanel() {
-    var pnl = $("#panel");
-    console.log(pnl);
-}
-
 function calPopulate(date) {
     selectedDate = date;
     var calDates = $(".cal-date");
@@ -35,7 +30,6 @@ function calPopulate(date) {
             }
         }   
         step = step.add(1, "day");
-        console.log(step);
     });
 }
 
@@ -44,7 +38,6 @@ function calToday() {
 }
 
 function calGoTo(date) {
-    console.log("calGoTo", date);
     calPopulate(dayjs(date));
 }
 
