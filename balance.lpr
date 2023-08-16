@@ -10,16 +10,16 @@ uses
   athreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, mainform, balanceframe, transactionform;
+  Forms, mainform, transactionform;
 
 {$R *.res}
 
 begin
   RequireDerivedFormResource:=True;
+  Application.Title:='Balance';
   Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
-  Application.CreateForm(TfrmTransaction, frmTransaction);
   Application.Run;
 end.
 

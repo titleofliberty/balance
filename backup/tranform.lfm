@@ -1,0 +1,98 @@
+object frmTran: TfrmTran
+  Left = 729
+  Height = 526
+  Top = 256
+  Width = 366
+  BorderStyle = bsDialog
+  Caption = 'Transaction'
+  ChildSizing.LeftRightSpacing = 16
+  ChildSizing.TopBottomSpacing = 8
+  ChildSizing.VerticalSpacing = 8
+  ClientHeight = 526
+  ClientWidth = 366
+  DesignTimePPI = 120
+  Position = poOwnerFormCenter
+  LCLVersion = '2.2.6.0'
+  object GizmoCalendar1: TGizmoCalendar
+    Left = 16
+    Height = 231
+    Top = 8
+    Width = 334
+    Align = alTop
+    Value = 45153
+  end
+  object Label1: TLabel
+    Left = 16
+    Height = 20
+    Top = 247
+    Width = 334
+    Align = alTop
+    Caption = 'Description'
+    ParentColor = False
+  end
+  object txtDescription: TComboBox
+    Left = 16
+    Height = 28
+    Top = 275
+    Width = 334
+    Align = alTop
+    ItemHeight = 20
+    TabOrder = 1
+  end
+  object Label2: TLabel
+    Left = 16
+    Height = 20
+    Top = 311
+    Width = 334
+    Align = alTop
+    Caption = 'Category'
+    ParentColor = False
+  end
+  object txtCategory: TComboBox
+    Left = 16
+    Height = 28
+    Top = 339
+    Width = 334
+    Align = alTop
+    ItemHeight = 20
+    TabOrder = 2
+  end
+  object Label3: TLabel
+    Left = 16
+    Height = 20
+    Top = 375
+    Width = 334
+    Align = alTop
+    Caption = 'Amount'
+    ParentColor = False
+  end
+  object FloatSpinEdit1: TFloatSpinEdit
+    Left = 16
+    Height = 28
+    Top = 403
+    Width = 334
+    Align = alTop
+    Alignment = taRightJustify
+    TabOrder = 3
+  end
+  object btnSave: TButton
+    Left = 144
+    Height = 38
+    Top = 464
+    Width = 94
+    Caption = 'Save'
+    Default = True
+    ModalResult = 1
+    TabOrder = 4
+  end
+  object btnCancel: TButton
+    Left = 256
+    Height = 38
+    Top = 464
+    Width = 94
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 5
+  end
+end

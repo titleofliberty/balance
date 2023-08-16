@@ -1,0 +1,15 @@
+
+Cash
+Charity
+Dining
+Entertainment
+Fee
+Fuel
+Groceries
+Household
+Income
+Misc
+Refund
+Return
+Sout
+Utilities

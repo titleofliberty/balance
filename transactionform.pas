@@ -5,28 +5,31 @@ unit transactionform;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, Buttons,
-  StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Calendar,
+  Spin;
 
 type
 
   { TfrmTransaction }
 
   TfrmTransaction = class(TForm)
-    lblTitle: TLabel;
-    lblAmount: TLabel;
-    lblCategory: TLabel;
-    pnlClient: TPanel;
-    pnlRight: TPanel;
-    btnDelete: TSpeedButton;
-    procedure btnDeleteClick(Sender: TObject);
-    procedure FormPaint(Sender: TObject);
-    procedure FormResize(Sender: TObject);
-    procedure pnlRightResize(Sender: TObject);
+    btnSave: TButton;
+    btnCancel: TButton;
+    calDate: TCalendar;
+    chkIncome: TCheckBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    txtAmount: TFloatSpinEdit;
+    txtCategory: TComboBox;
+    txtDescription: TComboBox;
+    procedure btnSaveClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
-    FOnDelete: TNotifyEvent;
+
   public
-    property OnDelete: TNotifyEvent read FOnDelete write FOnDelete;
+
   end;
 
 var
@@ -38,26 +41,24 @@ implementation
 
 { TfrmTransaction }
 
-procedure TfrmTransaction.FormPaint(Sender: TObject);
+procedure TfrmTransaction.FormCreate(Sender: TObject);
 begin
-  Canvas.Brush.Style := bsClear;
-  //Canvas.Rectangle(0, 0, Width - 1, Height - 1);
-  Canvas.RoundRect(0, 0, Width - 1, Height - 1, 8, 8);
+  txtDescription.Items.LoadFromFile('descriptions.txt');
+  txtCategory.Items.LoadFromFile('categories.txt');
 end;
 
-procedure TfrmTransaction.btnDeleteClick(Sender: TObject);
+procedure TfrmTransaction.btnSaveClick(Sender: TObject);
 begin
-  if Assigned(FOnDelete) then FOnDelete(Self);
-end;
-
-procedure TfrmTransaction.FormResize(Sender: TObject);
-begin
-  lblTitle.Height := pnlClient.Height div 2;
-end;
-
-procedure TfrmTransaction.pnlRightResize(Sender: TObject);
-begin
-  btnDelete.Top  := (pnlRight.Height - btnDelete.Height) div 2;
+  if txtDescription.ItemIndex = -1 then
+  begin
+    txtDescription.Items.Add(txtDescription.Text);
+    txtDescription.Items.SaveToFile('descriptions.txt');
+  end;
+  if txtCategory.ItemIndex = -1 then
+  begin
+    txtCategory.Items.Add(txtCategory.Text);
+    txtCategory.Items.SaveToFile('categories.txt');
+  end;
 end;
 
 end.
