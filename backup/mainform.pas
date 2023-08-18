@@ -117,7 +117,14 @@ begin
     begin
       FFileName := dlgOpen.FileName;
       grdMain.LoadFromCSVFile(FFileName);
-    end;
+    end
+    else if dlgSave.Execute then
+    begin
+      FFileName := dlgSave.FileName;
+      grdMain.SaveToCSVFile(FFileName);
+    end
+    else
+      Close;
   end;
 end;
 

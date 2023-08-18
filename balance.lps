@@ -22,7 +22,6 @@
         <ResourceBaseClass Value="Form"/>
         <TopLine Value="106"/>
         <CursorPos X="38" Y="124"/>
-        <FoldState Value=" T3f0s114 PiFk802"/>
         <UsageCount Value="30"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -35,11 +34,10 @@
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="47"/>
-        <CursorPos Y="67"/>
+        <TopLine Value="43"/>
+        <CursorPos Y="65"/>
         <UsageCount Value="23"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="descriptions.txt"/>

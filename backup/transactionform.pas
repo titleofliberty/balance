@@ -24,7 +24,7 @@ type
     txtAmount: TFloatSpinEdit;
     txtCategory: TComboBox;
     txtDescription: TComboBox;
-    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure btnSaveClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
 
@@ -47,8 +47,7 @@ begin
   txtCategory.Items.LoadFromFile('categories.txt');
 end;
 
-procedure TfrmTransaction.FormClose(Sender: TObject;
-  var CloseAction: TCloseAction);
+procedure TfrmTransaction.btnSaveClick(Sender: TObject);
 begin
   if txtDescription.ItemIndex = -1 then
   begin

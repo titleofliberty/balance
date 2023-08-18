@@ -22,7 +22,6 @@
         <ResourceBaseClass Value="Form"/>
         <TopLine Value="106"/>
         <CursorPos X="38" Y="124"/>
-        <FoldState Value=" T3f0s114 PiFk802"/>
         <UsageCount Value="30"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -34,9 +33,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="40"/>
-        <CursorPos X="52" Y="61"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="43"/>
+        <CursorPos Y="65"/>
         <UsageCount Value="23"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -44,18 +43,17 @@
       <Unit>
         <Filename Value="descriptions.txt"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="3"/>
         <CursorPos X="12" Y="25"/>
         <UsageCount Value="22"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit>
       <Unit>
         <Filename Value="categories.txt"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
-        <CursorPos X="13" Y="5"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="7" Y="13"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="None"/>
@@ -99,14 +97,6 @@
       <Backend Value="{46F8D863-C46A-4513-87F7-05B4F05262FC}"/>
     </Debugger>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="72" Column="9" TopLine="61"/>
-      </Position>
-      <Position>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="71" Column="9" TopLine="60"/>
-      </Position>
       <Position>
         <Filename Value="mainform.pas"/>
         <Caret Line="70" Column="9" TopLine="59"/>
@@ -218,6 +208,14 @@
       <Position>
         <Filename Value="mainform.pas"/>
         <Caret Line="73" Column="11" TopLine="66"/>
+      </Position>
+      <Position>
+        <Filename Value="transactionform.pas"/>
+        <Caret Line="61" Column="52" TopLine="40"/>
+      </Position>
+      <Position>
+        <Filename Value="transactionform.pas"/>
+        <Caret Line="54" TopLine="35"/>
       </Position>
     </JumpHistory>
     <RunParams>
