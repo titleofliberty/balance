@@ -1,6 +1,9 @@
 
 Cash
 Charity
+Clothing
+Debt
+Deposit
 Dining
 Entertainment
 Fee

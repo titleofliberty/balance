@@ -203,6 +203,7 @@ object frmMain: TfrmMain
     RowCount = 1
     TabOrder = 0
     OnColRowMoved = grdMainColRowMoved
+    OnDblClick = grdMainDblClick
     ColWidths = (
       80
       192

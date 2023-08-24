@@ -198,10 +198,12 @@ object frmMain: TfrmMain
         Width = 192
       end>
     DefaultDrawing = False
+    DefaultRowHeight = 38
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowMoving, goSmoothScroll, goRowHighlight]
     RowCount = 1
     TabOrder = 0
     OnColRowMoved = grdMainColRowMoved
+    OnDblClick = grdMainDblClick
     ColWidths = (
       80
       192

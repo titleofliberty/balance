@@ -21,6 +21,7 @@ type
     procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure grdMainColRowMoved(Sender: TObject; IsColumn: Boolean; sIndex,
       tIndex: Integer);
+    procedure grdMainDblClick(Sender: TObject);
   private
     FFileName: string;
     procedure CalcBalance();
@@ -101,6 +102,18 @@ begin
   CalcBalance();
 end;
 
+procedure TfrmMain.grdMainDblClick(Sender: TObject);
+var
+  frm : TfrmTransaction;
+begin
+  frm := TfrmTransaction.Create(Self);
+  PopulateForm(grdMain.Row, frm);
+  if frm.ShowModal = mrOk then
+  begin
+    UpdateGrid(grdMain.Row, frm);
+  end;
+end;
+
 procedure TfrmMain.FormCreate(Sender: TObject);
 var
   ini: TIniFile;
@@ -168,11 +181,11 @@ begin
     AForm.calDate.DateTime := StrToDate(grdMain.Cells[1, ARow], 'yyyy-mm-dd', '-');
     AForm.txtDescription.Text := grdMain.Cells[2, ARow];
     AForm.txtCategory.Text := grdMain.Cells[3, ARow];
-    amt := 0;
-    if grdMain.Cells[4, ARow] <> '' then
-      amt := grdMain.Cells[4, ARow].Replace('$', '').Replace(',', '').ToDouble;
-    AForm.chkIncome.Checked := amt > 0;
-    AForm.txtAmount.Value := amt;
+    if TryStrToFloat(grdMain.Cells[4, ARow].Replace('$', '').Replace(',', ''), amt) then
+    begin
+      AForm.chkIncome.Checked := amt > 0;
+      AForm.txtAmount.Value := amt;
+    end;
   end;
 end;
 
@@ -184,8 +197,10 @@ begin
   grdMain.Cells[2, ARow] := AForm.txtDescription.Text;
   grdMain.Cells[3, ARow] := AForm.txtCategory.Text;
   amt := AForm.txtAmount.Value;
-  if AForm.chkIncome.Checked and (amt < 0) then amt := amt * -1;
-  if AForm.chkIncome.Checked = false and (amt > 0) then amt := amt * -1;
+  if AForm.chkIncome.Checked and (amt < 0) then
+    amt := amt * -1
+  else if AForm.chkIncome.Checked = false and (amt > 0) then
+    amt := amt * -1;
   grdMain.Cells[4, ARow] := FormatCurr('$#,##0.00', amt);
   CalcBalance();
 end;
