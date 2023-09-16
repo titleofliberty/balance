@@ -24,6 +24,7 @@ type
     procedure grdMainDblClick(Sender: TObject);
     procedure grdMainDrawCell(Sender: TObject; aCol, aRow: Integer;
       aRect: TRect; aState: TGridDrawState);
+    procedure grdMainResize(Sender: TObject);
   private
     FFileName: string;
     procedure CalcBalance();
@@ -61,6 +62,15 @@ begin
   begin
     if grdMain.RowCount > 1 then
       grdMain.DeleteRow(grdMain.Row);
+  end
+  else if (Key = VK_C) then
+  begin
+    if (grdMain.Cells[6, grdMain.Row] = 'c') then
+      grdMain.Cells[6, grdMain.Row] := ''
+    else
+      grdMain.Cells[6, grdMain.Row] := 'c';
+    grdMain.Invalidate;
+    grdMain.SaveToCSVFile(FFileName);
   end
   else if (Key = VK_RETURN) and (grdMain.RowCount > 1) then
   begin
@@ -121,9 +131,11 @@ end;
 procedure TfrmMain.grdMainDrawCell(Sender: TObject; aCol, aRow: Integer;
   aRect: TRect; aState: TGridDrawState);
 var
+  ts  : TTextStyle;
+  str : string;
+  amt : Currency;
   grd : TStringGrid;
   rct, row : TRect;
-  ts : TTextStyle;
 begin
   grd := TStringGrid(Sender);
   rct := aRect;
@@ -137,20 +149,91 @@ begin
   grd.Canvas.Brush.Style := bsClear;
   rct.Inflate(-8, 0);
 
-  if aRow = 0 then
+  if (aRow = 0) then
     ts.Alignment := taCenter
+  else if (aCol > 3) then
+    ts.Alignment := taRightJustify
   else
-    if aCol > 3 then ts.Alignment := taRightJustify;
+    ts.Alignment := taLeftJustify;
 
-  if (gdRowHighlight in aState) then
-    grd.Canvas.Brush.Color := $7AB2F0
+  if (gdFixed in aState) then
+    grd.Canvas.Brush.Color := clForm
+  else if (gdRowHighlight in aState) then
+    grd.Canvas.Brush.Color := $F1D6AE
   else if ((aRow mod 2) = 0) and (aRow > 0) then
     grd.Canvas.Brush.Color := $DFEFD4;
 
   grd.Canvas.FillRect(row);
 
-  grd.Canvas.TextRect(rct, rct.Left, rct.Top, grd.Cells[aCol, aRow], ts);
+  if (aRow > 0) then
+  begin
+    if (aCol < 4) then
+    begin
+      if grd.Cells[6, aRow] = 'c' then
+        grd.Canvas.Font.Color := $968B80
+      else
+        grd.Canvas.Font.Color := $3D2F21;
+    end
+    else if (aCol = 4) then
+    begin
+      str := grd.Cells[aCol, aRow].Replace('$', '').Replace(',', '');
+      if TryStrToCurr(str, amt) then
+      begin
+        if (grd.Cells[6, aRow] = 'c') then
+          grd.Canvas.Font.Color := $968B80
+        else if (amt > 0) then
+          grd.Canvas.Font.Color := $549922
+        else if (amt < 0) then
+          grd.Canvas.Font.Color := $2B39C0
+        else
+          grd.Canvas.Font.Color := $3D2F21;
+      end;
+    end
+    else if (aCol = 5) then
+    begin
+      str := grd.Cells[aCol, aRow].Replace('$', '').Replace(',', '');
+      if TryStrToCurr(str, amt) then
+      begin
+        if (amt > 0) then
+          grd.Canvas.Font.Color := $549922
+        else if (amt < 0) then
+          grd.Canvas.Font.Color := $2B39C0;
+      end;
+    end;
+  end;
 
+  if (aRow = 0) then
+  begin
+    if (aCol = 1) then
+      grd.Canvas.TextRect(rct, rct.Left, rct.Top, 'Date', ts)
+    else if (aCol = 2) then
+      grd.Canvas.TextRect(rct, rct.Left, rct.Top, 'Description', ts)
+    else if (aCol = 3) then
+      grd.Canvas.TextRect(rct, rct.Left, rct.Top, 'Category', ts)
+    else if (aCol = 4) then
+      grd.Canvas.TextRect(rct, rct.Left, rct.Top, 'Amount', ts)
+    else if (aCol = 5) then
+      grd.Canvas.TextRect(rct, rct.Left, rct.Top, 'Balance', ts);
+  end
+  else
+   grd.Canvas.TextRect(rct, rct.Left, rct.Top, grd.Cells[aCol, aRow], ts);
+
+end;
+
+procedure TfrmMain.grdMainResize(Sender: TObject);
+var
+  w : integer;
+begin
+  grdMain.ColWidths[0] := grdMain.DefaultRowHeight;
+  grdMain.ColWidths[1] := 160;
+  grdMain.ColWidths[3] := 200;
+  grdMain.ColWidths[4] := 160;
+  grdMain.ColWidths[5] := 160;
+  grdMain.ColWidths[6] := 0;
+  w := grdMain.ColWidths[0] + grdMain.ColWidths[1] + grdMain.ColWidths[3]
+   + grdMain.ColWidths[4] + grdMain.ColWidths[5] + grdMain.ColWidths[6];
+
+  grdMain.ColWidths[2] := (grdMain.ClientWidth - w);
 end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
@@ -229,7 +312,7 @@ begin
       AForm.chkIncome.Checked := amt > 0;
       AForm.txtAmount.Value := amt;
     end;
-    AForm.chkCleared.Checked := grdMain.Cells[5, ARow] = 'c';
+    AForm.chkCleared.Checked := grdMain.Cells[6, ARow] = 'c';
   end;
 end;
 
@@ -241,15 +324,19 @@ begin
   grdMain.Cells[2, ARow] := AForm.txtDescription.Text;
   grdMain.Cells[3, ARow] := AForm.txtCategory.Text;
   amt := AForm.txtAmount.Value;
+
   if (AForm.chkIncome.Checked) and (amt < 0) then
     amt := amt * -1
   else if (AForm.chkIncome.Checked = false) and (amt > 0) then
     amt := amt * -1;
+
   grdMain.Cells[4, ARow] := FormatCurr('$#,##0.00', amt);
+
   if (AForm.chkCleared.Checked) then
-    grdMain.Cells[5, ARow] := 'c'
+    grdMain.Cells[6, ARow] := 'c'
   else
-    grdMain.Cells[5, ARow] := '';
+    grdMain.Cells[6, ARow] := '';
+
   CalcBalance();
 end;
 

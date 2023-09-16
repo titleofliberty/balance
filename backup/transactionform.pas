@@ -17,6 +17,7 @@ type
     btnCancel: TButton;
     calDate: TCalendar;
     chkIncome: TCheckBox;
+    chkCleared: TCheckBox;
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;

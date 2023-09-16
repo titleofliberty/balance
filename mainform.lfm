@@ -165,71 +165,19 @@ object frmMain: TfrmMain
     Top = 8
     Width = 1044
     Align = alClient
-    AlternateColor = clMoneyGreen
     AutoEdit = False
-    AutoFillColumns = True
-    ColCount = 7
-    Columns = <    
-      item
-        Title.Alignment = taCenter
-        Title.Caption = 'Date'
-        Width = 192
-      end    
-      item
-        Title.Alignment = taCenter
-        Title.Caption = 'Description'
-        Width = 192
-      end    
-      item
-        Title.Alignment = taCenter
-        Title.Caption = 'Category'
-        Width = 192
-      end    
-      item
-        Alignment = taRightJustify
-        Title.Alignment = taCenter
-        Title.Caption = 'Amount'
-        Width = 192
-      end    
-      item
-        Alignment = taRightJustify
-        Title.Alignment = taCenter
-        Title.Caption = 'Balance'
-        Width = 192
-      end    
-      item
-        Alignment = taCenter
-        Title.Alignment = taCenter
-        Title.Caption = 'Cleared'
-        Width = 0
-        Visible = False
-      end>
+    ColCount = 10
     DefaultDrawing = False
-    DefaultRowHeight = 38
+    DefaultRowHeight = 30
+    ExtendedSelect = False
     Flat = True
-    Font.CharSet = ANSI_CHARSET
-    Font.Height = -20
-    Font.Name = 'Courier New'
-    Font.Pitch = fpFixed
-    Font.Quality = fqCleartype
-    GridLineColor = clMedGray
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowMoving, goSmoothScroll, goRowHighlight]
-    ParentFont = False
     RowCount = 1
     TabOrder = 0
-    TitleStyle = tsStandard
     OnColRowMoved = grdMainColRowMoved
     OnDblClick = grdMainDblClick
     OnDrawCell = grdMainDrawCell
-    ColWidths = (
-      80
-      192
-      192
-      192
-      192
-      192
-      0
-    )
+    OnResize = grdMainResize
   end
   object dlgOpen: TOpenDialog
     DefaultExt = '.checkbook'

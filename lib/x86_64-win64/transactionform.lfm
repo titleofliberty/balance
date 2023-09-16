@@ -95,7 +95,7 @@ object frmTransaction: TfrmTransaction
     Width = 263
     Align = alTop
     Alignment = taRightJustify
-    TabOrder = 4
+    TabOrder = 5
   end
   object chkIncome: TCheckBox
     Left = 16
@@ -115,7 +115,7 @@ object frmTransaction: TfrmTransaction
     Default = True
     ModalResult = 1
     OnClick = btnSaveClick
-    TabOrder = 5
+    TabOrder = 6
   end
   object btnCancel: TButton
     Left = 182
@@ -125,7 +125,7 @@ object frmTransaction: TfrmTransaction
     Cancel = True
     Caption = 'Cancel'
     ModalResult = 2
-    TabOrder = 6
+    TabOrder = 7
   end
   object chkCleared: TCheckBox
     Left = 16
@@ -134,6 +134,6 @@ object frmTransaction: TfrmTransaction
     Width = 263
     Align = alTop
     Caption = 'Cleared'
-    TabOrder = 7
+    TabOrder = 4
   end
 end
