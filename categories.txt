@@ -1,4 +1,6 @@
 
+
+Automotive
 Cash
 Charity
 Clothing
@@ -8,9 +10,11 @@ Dining
 Entertainment
 Fee
 Fuel
+Gift
 Groceries
 Household
 Income
+Medical
 Misc
 Refund
 Repair

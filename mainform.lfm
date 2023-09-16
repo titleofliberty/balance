@@ -168,7 +168,7 @@ object frmMain: TfrmMain
     AlternateColor = clMoneyGreen
     AutoEdit = False
     AutoFillColumns = True
-    ColCount = 6
+    ColCount = 7
     Columns = <    
       item
         Title.Alignment = taCenter
@@ -196,14 +196,31 @@ object frmMain: TfrmMain
         Title.Alignment = taCenter
         Title.Caption = 'Balance'
         Width = 192
+      end    
+      item
+        Alignment = taCenter
+        Title.Alignment = taCenter
+        Title.Caption = 'Cleared'
+        Width = 0
+        Visible = False
       end>
     DefaultDrawing = False
     DefaultRowHeight = 38
+    Flat = True
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -20
+    Font.Name = 'Courier New'
+    Font.Pitch = fpFixed
+    Font.Quality = fqCleartype
+    GridLineColor = clMedGray
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowMoving, goSmoothScroll, goRowHighlight]
+    ParentFont = False
     RowCount = 1
     TabOrder = 0
+    TitleStyle = tsStandard
     OnColRowMoved = grdMainColRowMoved
     OnDblClick = grdMainDblClick
+    OnDrawCell = grdMainDrawCell
     ColWidths = (
       80
       192
@@ -211,6 +228,7 @@ object frmMain: TfrmMain
       192
       192
       192
+      0
     )
   end
   object dlgOpen: TOpenDialog

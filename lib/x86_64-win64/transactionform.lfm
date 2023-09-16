@@ -1,6 +1,6 @@
 object frmTransaction: TfrmTransaction
   Left = 386
-  Height = 581
+  Height = 605
   Top = 171
   Width = 295
   BorderStyle = bsDialog
@@ -8,7 +8,7 @@ object frmTransaction: TfrmTransaction
   ChildSizing.LeftRightSpacing = 16
   ChildSizing.TopBottomSpacing = 16
   ChildSizing.VerticalSpacing = 8
-  ClientHeight = 581
+  ClientHeight = 605
   ClientWidth = 295
   DesignTimePPI = 120
   Font.CharSet = ANSI_CHARSET
@@ -82,7 +82,7 @@ object frmTransaction: TfrmTransaction
   object Label4: TLabel
     Left = 16
     Height = 22
-    Top = 429
+    Top = 463
     Width = 263
     Align = alTop
     Caption = 'Amount'
@@ -91,7 +91,7 @@ object frmTransaction: TfrmTransaction
   object txtAmount: TFloatSpinEdit
     Left = 16
     Height = 30
-    Top = 459
+    Top = 493
     Width = 263
     Align = alTop
     Alignment = taRightJustify
@@ -109,7 +109,7 @@ object frmTransaction: TfrmTransaction
   object btnSave: TButton
     Left = 72
     Height = 38
-    Top = 520
+    Top = 544
     Width = 94
     Caption = 'Save'
     Default = True
@@ -120,11 +120,20 @@ object frmTransaction: TfrmTransaction
   object btnCancel: TButton
     Left = 182
     Height = 38
-    Top = 520
+    Top = 544
     Width = 94
     Cancel = True
     Caption = 'Cancel'
     ModalResult = 2
     TabOrder = 6
+  end
+  object chkCleared: TCheckBox
+    Left = 16
+    Height = 26
+    Top = 429
+    Width = 263
+    Align = alTop
+    Caption = 'Cleared'
+    TabOrder = 7
   end
 end

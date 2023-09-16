@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
-  Menus, Buttons, Grids, StrUtils, DateUtils, LCLType, transactionform, IniFiles;
+  Menus, Buttons, Grids, StrUtils, DateUtils, LCLType, transactionform, IniFiles, Types;
 
 type
 
@@ -22,6 +22,8 @@ type
     procedure grdMainColRowMoved(Sender: TObject; IsColumn: Boolean; sIndex,
       tIndex: Integer);
     procedure grdMainDblClick(Sender: TObject);
+    procedure grdMainDrawCell(Sender: TObject; aCol, aRow: Integer;
+      aRect: TRect; aState: TGridDrawState);
   private
     FFileName: string;
     procedure CalcBalance();
@@ -81,6 +83,7 @@ begin
       grdMain.Clear;
       grdMain.RowCount := 1;
       grdMain.SaveToCSVFile(FFileName);
+      Caption := Format('Balance - %s', [FFileName]);
     end;
   end
   else if (Key = VK_O) and (ssCtrl in Shift) then
@@ -91,6 +94,7 @@ begin
       grdMain.Clear;
       grdMain.RowCount := 1;
       grdMain.LoadFromCSVFile(FFileName);
+      Caption := Format('Balance - %s', [FFileName]);
     end;
   end;
 
@@ -114,6 +118,41 @@ begin
   end;
 end;
 
+procedure TfrmMain.grdMainDrawCell(Sender: TObject; aCol, aRow: Integer;
+  aRect: TRect; aState: TGridDrawState);
+var
+  grd : TStringGrid;
+  rct, row : TRect;
+  ts : TTextStyle;
+begin
+  grd := TStringGrid(Sender);
+  rct := aRect;
+  row.TopLeft := grd.CellRect(1, aRow).TopLeft;
+  row.BottomRight := grd.CellRect(5, aRow).BottomRight;
+  ts.Layout := tlCenter;
+  ts.SingleLine  := true;
+  ts.SystemFont  := false;
+  ts.Clipping    := true;
+
+  grd.Canvas.Brush.Style := bsClear;
+  rct.Inflate(-8, 0);
+
+  if aRow = 0 then
+    ts.Alignment := taCenter
+  else
+    if aCol > 3 then ts.Alignment := taRightJustify;
+
+  if (gdRowHighlight in aState) then
+    grd.Canvas.Brush.Color := $7AB2F0
+  else if ((aRow mod 2) = 0) and (aRow > 0) then
+    grd.Canvas.Brush.Color := $DFEFD4;
+
+  grd.Canvas.FillRect(row);
+
+  grd.Canvas.TextRect(rct, rct.Left, rct.Top, grd.Cells[aCol, aRow], ts);
+
+end;
+
 procedure TfrmMain.FormCreate(Sender: TObject);
 var
   ini: TIniFile;
@@ -123,7 +162,10 @@ begin
   grdMain.ColWidths[0] := grdMain.DefaultRowHeight;
   ini.Free;
   if FFileName <> '' then
-    grdMain.LoadFromCSVFile(FFileName)
+  begin
+    grdMain.LoadFromCSVFile(FFileName);
+    Caption := Format('Balance - %s', [FFileName]);
+  end
   else
   begin
     if dlgOpen.Execute then
@@ -174,6 +216,7 @@ begin
     AForm.txtDescription.Text := '';
     AForm.txtCategory.Text := '';
     AForm.chkIncome.Checked := false;
+    AForm.chkCleared.Checked := false;
     AForm.txtAmount.Value := 0;
   end
   else
@@ -186,6 +229,7 @@ begin
       AForm.chkIncome.Checked := amt > 0;
       AForm.txtAmount.Value := amt;
     end;
+    AForm.chkCleared.Checked := grdMain.Cells[5, ARow] = 'c';
   end;
 end;
 
@@ -202,6 +246,10 @@ begin
   else if (AForm.chkIncome.Checked = false) and (amt > 0) then
     amt := amt * -1;
   grdMain.Cells[4, ARow] := FormatCurr('$#,##0.00', amt);
+  if (AForm.chkCleared.Checked) then
+    grdMain.Cells[5, ARow] := 'c'
+  else
+    grdMain.Cells[5, ARow] := '';
   CalcBalance();
 end;
 
