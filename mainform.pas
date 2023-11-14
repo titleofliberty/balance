@@ -61,7 +61,10 @@ begin
   else if Key = VK_DELETE then
   begin
     if grdMain.RowCount > 1 then
+    begin
       grdMain.DeleteRow(grdMain.Row);
+      grdMain.SaveToCSVFile(FFileName);
+    end;
   end
   else if (Key = VK_C) then
   begin

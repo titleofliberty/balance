@@ -189,7 +189,7 @@ begin
           grd.Canvas.Font.Color := $3D2F21;
       end;
     end
-    else if (aCol > 5) then
+    else if (aCol = 5) then
     begin
       str := grd.Cells[aCol, aRow].Replace('$', '').Replace(',', '');
       if TryStrToCurr(str, amt) then

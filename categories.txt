@@ -1,5 +1,3 @@
-
-$-663.76 
 Adjustment
 Automotive
 Cash
@@ -15,9 +13,16 @@ Gift
 Groceries
 Household
 Income
+Insurance
+Loan
 Medical
 Misc
 Refund
+Reimbursement
 Repair
 Return
+Subscription
+Tax
+Transfer
 Utilities
+Withdrawal

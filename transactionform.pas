@@ -49,15 +49,19 @@ begin
 end;
 
 procedure TfrmTransaction.btnSaveClick(Sender: TObject);
+var
+  desc, cat: string;
 begin
   if txtDescription.ItemIndex = -1 then
   begin
-    txtDescription.Items.Add(txtDescription.Text);
+    desc := Trim(txtDescription.Text);
+    txtDescription.Items.Add(desc);
     txtDescription.Items.SaveToFile('descriptions.txt');
   end;
   if txtCategory.ItemIndex = -1 then
   begin
-    txtCategory.Items.Add(txtCategory.Text);
+    cat := Trim(txtCategory.Text);
+    txtCategory.Items.Add(cat);
     txtCategory.Items.SaveToFile('categories.txt');
   end;
 end;
