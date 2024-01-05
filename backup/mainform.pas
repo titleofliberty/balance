@@ -15,7 +15,22 @@ type
   TfrmMain = class(TForm)
     dlgOpen: TOpenDialog;
     dlgSave: TSaveDialog;
+    btnInsert: TSpeedButton;
+    btnDelete: TSpeedButton;
+    txtFilter: TEdit;
     grdMain: TStringGrid;
+    mnuMainEditInsert: TMenuItem;
+    mnuMainEditDelete: TMenuItem;
+    mnuMainEdit: TMenuItem;
+    mnuMainFileQuit: TMenuItem;
+    pnlTools: TPanel;
+    Separator1: TMenuItem;
+    mnuMainFileOpen: TMenuItem;
+    mnuMainFileNew: TMenuItem;
+    mnuMainFile: TMenuItem;
+    mnuMain: TMainMenu;
+    btnClear: TSpeedButton;
+    procedure btnClearClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
@@ -25,6 +40,12 @@ type
     procedure grdMainDrawCell(Sender: TObject; aCol, aRow: Integer;
       aRect: TRect; aState: TGridDrawState);
     procedure grdMainResize(Sender: TObject);
+    procedure mnuMainEditDeleteClick(Sender: TObject);
+    procedure mnuMainEditInsertClick(Sender: TObject);
+    procedure mnuMainFileNewClick(Sender: TObject);
+    procedure mnuMainFileOpenClick(Sender: TObject);
+    procedure mnuMainFileQuitClick(Sender: TObject);
+    procedure txtFilterChange(Sender: TObject);
   private
     FFileName: string;
     procedure CalcBalance();
@@ -48,31 +69,7 @@ var
   amt : Double;
   frm : TfrmTransaction;
 begin
-  if Key = VK_INSERT then
-  begin
-    frm := TfrmTransaction.Create(Self);
-    PopulateForm(0, frm);
-    if frm.ShowModal = mrOk then
-    begin
-      grdMain.InsertColRow(false, 1);
-      UpdateGrid(1, frm);
-    end;
-  end
-  else if Key = VK_DELETE then
-  begin
-    if grdMain.RowCount > 1 then
-      grdMain.DeleteRow(grdMain.Row);
-  end
-  else if (Key = VK_C) then
-  begin
-    if (grdMain.Cells[6, grdMain.Row] = 'c') then
-      grdMain.Cells[6, grdMain.Row] := ''
-    else
-      grdMain.Cells[6, grdMain.Row] := 'c';
-    grdMain.Invalidate;
-    grdMain.SaveToCSVFile(FFileName);
-  end
-  else if (Key = VK_RETURN) and (grdMain.RowCount > 1) then
+  if (Key = VK_RETURN) and (grdMain.RowCount > 1) then
   begin
     frm := TfrmTransaction.Create(Self);
     PopulateForm(grdMain.Row, frm);
@@ -80,34 +77,7 @@ begin
     begin
       UpdateGrid(grdMain.Row, frm);
     end;
-  end
-  else if (Key = VK_Q) and (ssCtrl in Shift) then
-  begin
-    Close;
-  end
-  else if (Key = VK_N) and (ssCtrl in Shift) then
-  begin
-    if dlgSave.Execute then
-    begin
-      FFileName := dlgSave.FileName;
-      grdMain.Clear;
-      grdMain.RowCount := 1;
-      grdMain.SaveToCSVFile(FFileName);
-      Caption := Format('Balance - %s', [FFileName]);
-    end;
-  end
-  else if (Key = VK_O) and (ssCtrl in Shift) then
-  begin
-    if dlgOpen.Execute then
-    begin
-      FFileName := dlgOpen.FileName;
-      grdMain.Clear;
-      grdMain.RowCount := 1;
-      grdMain.LoadFromCSVFile(FFileName);
-      Caption := Format('Balance - %s', [FFileName]);
-    end;
   end;
-
 end;
 
 procedure TfrmMain.grdMainColRowMoved(Sender: TObject; IsColumn: Boolean;
@@ -225,15 +195,94 @@ var
   w : integer;
 begin
   grdMain.ColWidths[0] := grdMain.DefaultRowHeight;
-  grdMain.ColWidths[1] := 160;
-  grdMain.ColWidths[3] := 200;
-  grdMain.ColWidths[4] := 160;
-  grdMain.ColWidths[5] := 160;
+  grdMain.ColWidths[1] := 120;
+  grdMain.ColWidths[3] := 120;
+  grdMain.ColWidths[4] := 100;
+  grdMain.ColWidths[5] := 100;
   grdMain.ColWidths[6] := 0;
   w := grdMain.ColWidths[0] + grdMain.ColWidths[1] + grdMain.ColWidths[3]
    + grdMain.ColWidths[4] + grdMain.ColWidths[5] + grdMain.ColWidths[6];
 
   grdMain.ColWidths[2] := (grdMain.ClientWidth - w);
+end;
+
+procedure TfrmMain.mnuMainEditDeleteClick(Sender: TObject);
+begin
+  if grdMain.RowCount > 1 then
+  begin
+    grdMain.DeleteRow(grdMain.Row);
+    grdMain.SaveToCSVFile(FFileName);
+  end;
+end;
+
+procedure TfrmMain.mnuMainEditInsertClick(Sender: TObject);
+var
+  row : integer;
+  amt : Double;
+  frm : TfrmTransaction;
+begin
+  frm := TfrmTransaction.Create(Self);
+  PopulateForm(0, frm);
+  if frm.ShowModal = mrOk then
+  begin
+    row := 0;
+    if grdMain.RowCount > 1 then row := grdMain.Row;
+    grdMain.InsertColRow(false, row);
+    UpdateGrid(row, frm);
+    grdMain.Row := row;
+  end;
+end;
+
+procedure TfrmMain.mnuMainFileNewClick(Sender: TObject);
+begin
+  if dlgSave.Execute then
+  begin
+    FFileName := dlgSave.FileName;
+    grdMain.Clear;
+    grdMain.RowCount := 1;
+    grdMain.SaveToCSVFile(FFileName);
+    Caption := Format('Balance - %s', [FFileName]);
+  end;
+end;
+
+procedure TfrmMain.mnuMainFileOpenClick(Sender: TObject);
+begin
+  if dlgOpen.Execute then
+  begin
+    FFileName := dlgOpen.FileName;
+    grdMain.Clear;
+    grdMain.RowCount := 1;
+    grdMain.LoadFromCSVFile(FFileName);
+    Caption := Format('Balance - %s', [FFileName]);
+  end;
+end;
+
+procedure TfrmMain.mnuMainFileQuitClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfrmMain.txtFilterChange(Sender: TObject);
+var
+  r: integer;
+begin
+  if grdMain.RowCount = 0 then exit;
+
+  if txtFilter.Text = '' then
+  begin
+    for r := 1 to grdMain.RowCount - 1 do
+      grdMain.RowHeights[r] := grdMain.DefaultRowHeight;
+  end
+  else
+  begin
+    for r := 1 to grdMain.RowCount - 1 do
+    begin
+      if AnsiContainsText(grdMain.Cells[2, r], txtFilter.Text) or AnsiContainsText(grdMain.Cells[3, r], txtFilter.Text) then
+        grdMain.RowHeights[r] := grdMain.DefaultRowHeight
+      else
+        grdMain.RowHeights[r] := 0;
+    end;
+  end;
 end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
@@ -274,6 +323,11 @@ begin
   ini.WriteString('Options', 'Resent', FFileName);
 end;
 
+procedure TfrmMain.btnClearClick(Sender: TObject);
+begin
+  txtFilter.Text := '';
+end;
+
 procedure TfrmMain.CalcBalance;
 var
   r: integer;
@@ -282,7 +336,10 @@ begin
   b := 0;
   for r := grdMain.RowCount - 1 downto 1 do
   begin
-    a := grdMain.Cells[4, r].Replace('$', '').Replace(',', '').ToDouble;
+    if grdMain.Cells[4, r] <> '' then
+      a := grdMain.Cells[4, r].Replace('$', '').Replace(',', '').ToDouble
+    else
+      a := 0;
     b := b + a;
     grdMain.Cells[5, r] := FormatCurr('$#,##0.00', b);
   end;

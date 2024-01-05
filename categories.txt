@@ -1,3 +1,5 @@
+
+
 Adjustment
 Automotive
 Cash
@@ -21,6 +23,7 @@ Refund
 Reimbursement
 Repair
 Return
+Savings
 Subscription
 Tax
 Transfer

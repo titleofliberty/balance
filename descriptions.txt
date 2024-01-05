@@ -10,6 +10,7 @@ Arbys
 AT&T Prepaid
 Atami Express
 ATM
+ATM
 Autozone
 Bitwarden
 Blue Cross
@@ -23,12 +24,15 @@ Costco
 Cracker Barrel
 Dan Hendrix
 Deposit
+Dimas Brothers
 Dollar Tree
+Doordash
 Etsy.com
 Exxon
 Family Dollar
 Food Lion
 Hardees
+Hobby Lobby
 Hochstetler Country Store
 Home Depot
 Ingles Market
@@ -38,10 +42,12 @@ Life Is Good
 Loco Mart
 Los Amigos
 Lowes
+Market
 Nick Campbell
 Oconee County
 Oconee Vetinary Clinic
 Prisma Health
+RaNea Doctor
 RaNea Work
 Robert Half
 Rock Auto
@@ -50,6 +56,8 @@ Ruby Tuesday
 SCDMV
 SCGov
 Schlotzskys
+SchoolRecord
+Securitas
 Seneca Appliance Repair
 Seneca Family Restaurant
 Seneca Pharmacy
@@ -60,6 +68,8 @@ Southern Steak House
 Standard Process
 Staples
 Starting Balance
+Stop-A-Minit
+Taco Bell
 Taral Sharma MD
 TD's Express
 The Oasis Ranch
@@ -72,4 +82,6 @@ VIOC Valvolin Instant Oil Change
 Walmart
 Wendys
 West Carolina Rural Telecom
+Withdrawal
+World Class Cheese Burgers
 Zaxbys
