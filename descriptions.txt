@@ -2,6 +2,7 @@ Adams Products
 Air Today
 Aldi
 Allstate
+Amac
 Amazon
 Amazon Marketplace
 Amazon Prime
@@ -76,6 +77,7 @@ The Oasis Ranch
 Transfer
 Tri Star Imports
 UI Benefits
+Uncollected Protection Deposit
 UPS Store
 USPS
 VIOC Valvolin Instant Oil Change
