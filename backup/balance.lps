@@ -21,9 +21,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="271"/>
-        <CursorPos X="99" Y="280"/>
-        <FoldState Value=" T8i5241 T3iN0E3 pjIje0E13115]D2lB0M T6j301222 T1if02272 PjVn90 T0j9]G74]HMnE4f"/>
+        <TopLine Value="289"/>
+        <CursorPos X="6" Y="379"/>
+        <FoldState Value=" T8i5241 T3iN0E3 pjIje0E614 PjVkR0 T6j301222 T1if02281]R6mZ]R0j922783]HJmR2T"/>
         <UsageCount Value="47"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -34,11 +34,10 @@
         <ComponentName Value="frmTransaction"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="48"/>
         <CursorPos X="37" Y="56"/>
         <UsageCount Value="40"/>
-        <Loaded Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="descriptions.txt"/>
@@ -110,10 +109,6 @@
       <Backend Value="{46F8D863-C46A-4513-87F7-05B4F05262FC}"/>
     </Debugger>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="217" TopLine="211"/>
-      </Position>
       <Position>
         <Filename Value="mainform.pas"/>
         <Caret Line="218" TopLine="211"/>
@@ -229,6 +224,10 @@
       <Position>
         <Filename Value="mainform.pas"/>
         <Caret Line="281" Column="64" TopLine="273"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="280" Column="99" TopLine="271"/>
       </Position>
     </JumpHistory>
     <RunParams>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
-  <Compiler Value="C:\lazarus\fpc\3.2.2\bin\x86_64-win64\fpc.exe" Date="1449427374"/>
-  <Params Value=" -MObjFPC -Scghi -O1 -gw2 -gl -WG -l -vewnhibq -FiC:\Users\title\Documents\balance\lib\x86_64-win64 -FuC:\Users\title\Documents\gizmos\lib\x86_64-win64 -FuC:\lazarus\lcl\units\x86_64-win64\win32 -FuC:\lazarus\lcl\units\x86_64-win64 -FuC:\lazarus\components\freetype\lib\x86_64-win64 -FuC:\lazarus\components\lazutils\lib\x86_64-win64 -FuC:\lazarus\packager\units\x86_64-win64 -FuC:\Users\title\Documents\balance\ -FUC:\Users\title\Documents\balance\lib\x86_64-win64\ -FEC:\Users\title\Documents\balance\ -oC:\Users\title\Documents\balance\balance.exe -dLCL -dLCLwin32 balance.lpr"/>
+  <Compiler Value="C:\lazarus\fpc\3.2.2\bin\x86_64-win64\fpc.exe" Date="1469148810"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -gw2 -gl -WG -l -vewnhibq -FiC:\Users\title\OneDrive\Documents\GitHub\balance\lib\x86_64-win64 -FuC:\Users\title\OneDrive\Documents\GitHub\gizmos\lib\x86_64-win64 -FuC:\lazarus\lcl\units\x86_64-win64\win32 -FuC:\lazarus\lcl\units\x86_64-win64 -FuC:\lazarus\components\freetype\lib\x86_64-win64 -FuC:\lazarus\components\lazutils\lib\x86_64-win64 -FuC:\lazarus\packager\units\x86_64-win64 -FuC:\Users\title\OneDrive\Documents\GitHub\balance\ -FUC:\Users\title\OneDrive\Documents\GitHub\balance\lib\x86_64-win64\ -FEC:\Users\title\OneDrive\Documents\GitHub\balance\ -oC:\Users\title\OneDrive\Documents\GitHub\balance\balance.exe -dLCL -dLCLwin32 balance.lpr"/>
 </CONFIG>

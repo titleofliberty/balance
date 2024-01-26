@@ -225,7 +225,7 @@ begin
   PopulateForm(0, frm);
   if frm.ShowModal = mrOk then
   begin
-    row := 0;
+    row := 1;
     if grdMain.RowCount > 1 then row := grdMain.Row;
     grdMain.InsertColRow(false, row);
     UpdateGrid(row, frm);

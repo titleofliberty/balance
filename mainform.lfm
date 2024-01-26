@@ -8,7 +8,7 @@ object frmMain: TfrmMain
   ChildSizing.TopBottomSpacing = 8
   ChildSizing.HorizontalSpacing = 8
   ChildSizing.VerticalSpacing = 8
-  ClientHeight = 544
+  ClientHeight = 564
   ClientWidth = 848
   Font.CharSet = ANSI_CHARSET
   Font.Height = -16
@@ -158,10 +158,10 @@ object frmMain: TfrmMain
   OnCreate = FormCreate
   OnKeyUp = FormKeyUp
   Position = poDesktopCenter
-  LCLVersion = '2.2.6.0'
+  LCLVersion = '3.0.0.3'
   object grdMain: TStringGrid
     Left = 8
-    Height = 488
+    Height = 508
     Top = 48
     Width = 832
     Align = alClient
@@ -173,6 +173,7 @@ object frmMain: TfrmMain
     Flat = True
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowMoving, goSmoothScroll, goRowHighlight]
     RowCount = 1
+    ScrollBars = ssAutoVertical
     TabOrder = 0
     OnColRowMoved = grdMainColRowMoved
     OnDblClick = grdMainDblClick
@@ -240,8 +241,8 @@ object frmMain: TfrmMain
       Top = 0
       Width = 144
       Align = alRight
-      OnChange = txtFilterChange
       TabOrder = 0
+      OnChange = txtFilterChange
     end
     object btnInsert: TSpeedButton
       Left = 0

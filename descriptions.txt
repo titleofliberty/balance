@@ -11,7 +11,6 @@ Arbys
 AT&T Prepaid
 Atami Express
 ATM
-ATM
 Autozone
 Bitwarden
 Blue Cross
@@ -29,6 +28,7 @@ Dimas Brothers
 Dollar Tree
 Doordash
 Etsy.com
+Express Mart
 Exxon
 Family Dollar
 Food Lion
