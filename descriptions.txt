@@ -12,6 +12,7 @@ AT&T Prepaid
 Atami Express
 ATM
 Autozone
+Big Lots
 Bitwarden
 Blue Cross
 Blue Ridge Electric
@@ -37,6 +38,7 @@ Hobby Lobby
 Hochstetler Country Store
 Home Depot
 Ingles Market
+IRS
 JPay
 LDS Church
 Life Is Good
@@ -47,6 +49,7 @@ Market
 Nick Campbell
 Oconee County
 Oconee Vetinary Clinic
+Prime Video
 Prisma Health
 RaNea Doctor
 RaNea Work
@@ -54,6 +57,7 @@ Robert Half
 Rock Auto
 Rosa Clark Medical Clinic
 Ruby Tuesday
+SC State Treasury
 SCDMV
 SCGov
 Schlotzskys
@@ -64,6 +68,7 @@ Seneca Family Restaurant
 Seneca Pharmacy
 Shoe Show
 Short Stop Food Store
+Skins Hotdogs
 Sleep Number
 Southern Steak House
 Standard Process
@@ -81,6 +86,7 @@ Uncollected Protection Deposit
 UPS Store
 USPS
 VIOC Valvolin Instant Oil Change
+Waffle House
 Walmart
 Wendys
 West Carolina Rural Telecom

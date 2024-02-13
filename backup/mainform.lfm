@@ -173,6 +173,7 @@ object frmMain: TfrmMain
     Flat = True
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowMoving, goSmoothScroll, goRowHighlight]
     RowCount = 1
+    ScrollBars = ssAutoVertical
     TabOrder = 0
     OnColRowMoved = grdMainColRowMoved
     OnDblClick = grdMainDblClick

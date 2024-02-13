@@ -194,12 +194,12 @@ procedure TfrmMain.grdMainResize(Sender: TObject);
 var
   w : integer;
 begin
-  grdMain.ColWidths[0] := grdMain.DefaultRowHeight;
-  grdMain.ColWidths[1] := 120;
-  grdMain.ColWidths[3] := 120;
-  grdMain.ColWidths[4] := 100;
-  grdMain.ColWidths[5] := 100;
-  grdMain.ColWidths[6] := 0;
+  grdMain.ColWidths[0] := grdMain.DefaultRowHeight;  // Row Header
+  grdMain.ColWidths[1] := 120; // Date
+  grdMain.ColWidths[3] := 120; // Category
+  grdMain.ColWidths[4] := 120; // Amount
+  grdMain.ColWidths[5] := 120; // Balance
+  grdMain.ColWidths[6] := 0;   // Cleared
   w := grdMain.ColWidths[0] + grdMain.ColWidths[1] + grdMain.ColWidths[3]
    + grdMain.ColWidths[4] + grdMain.ColWidths[5] + grdMain.ColWidths[6];
 
