@@ -5,7 +5,7 @@ unit mainform;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, optionsform,
   Menus, Buttons, Grids, StrUtils, DateUtils, LCLType, transactionform, IniFiles, Types;
 
 type
@@ -17,6 +17,8 @@ type
     dlgSave: TSaveDialog;
     btnInsert: TSpeedButton;
     btnDelete: TSpeedButton;
+    mnuMainToolsOptions: TMenuItem;
+    mnuMainTools: TMenuItem;
     txtFilter: TEdit;
     grdMain: TStringGrid;
     mnuMainEditInsert: TMenuItem;
@@ -45,6 +47,7 @@ type
     procedure mnuMainFileNewClick(Sender: TObject);
     procedure mnuMainFileOpenClick(Sender: TObject);
     procedure mnuMainFileQuitClick(Sender: TObject);
+    procedure mnuMainToolsOptionsClick(Sender: TObject);
     procedure txtFilterChange(Sender: TObject);
   private
     FFileName: string;
@@ -129,9 +132,9 @@ begin
   if (gdFixed in aState) then
     grd.Canvas.Brush.Color := clForm
   else if (gdRowHighlight in aState) then
-    grd.Canvas.Brush.Color := $F1D6AE
-  else if ((aRow mod 2) = 0) and (aRow > 0) then
-    grd.Canvas.Brush.Color := $DFEFD4;
+    grd.Canvas.Brush.Color := $F1D6AE;
+  //else if ((aRow mod 2) = 0) and (aRow > 0) then
+  //  grd.Canvas.Brush.Color := $DFEFD4;
 
   grd.Canvas.FillRect(row);
 
@@ -141,8 +144,10 @@ begin
     begin
       if grd.Cells[6, aRow] = 'c' then
         grd.Canvas.Font.Color := $968B80
+      else if (gdRowHighlight in aState) then
+        grd.Canvas.Font.Color := $000000
       else
-        grd.Canvas.Font.Color := $3D2F21;
+        grd.Canvas.Font.Color := $ffffff;
     end
     else if (aCol = 4) then
     begin
@@ -260,6 +265,19 @@ end;
 procedure TfrmMain.mnuMainFileQuitClick(Sender: TObject);
 begin
   Close;
+end;
+
+procedure TfrmMain.mnuMainToolsOptionsClick(Sender: TObject);
+var
+  frm: TfrmOptions;
+begin
+  frm := TfrmOptions.Create(Self);
+  if frm.ShowModal = mrOK then
+  begin
+    frm.txtDescriptions.Lines.SaveToFile('descriptions.txt');
+    frm.txtCategorys.Lines.SaveToFile('categories.txt');
+  end;
+  frm.Free;
 end;
 
 procedure TfrmMain.txtFilterChange(Sender: TObject);

@@ -12,7 +12,7 @@ object frmMain: TfrmMain
   ClientWidth = 848
   Font.CharSet = ANSI_CHARSET
   Font.Height = -16
-  Font.Name = 'Courier New'
+  Font.Name = 'Ubuntu Mono'
   Font.Pitch = fpFixed
   Font.Quality = fqDraft
   Icon.Data = {
@@ -158,7 +158,7 @@ object frmMain: TfrmMain
   OnCreate = FormCreate
   OnKeyUp = FormKeyUp
   Position = poDesktopCenter
-  LCLVersion = '3.0.0.3'
+  LCLVersion = '3.2.0.0'
   object grdMain: TStringGrid
     Left = 8
     Height = 508
@@ -168,10 +168,17 @@ object frmMain: TfrmMain
     AutoEdit = False
     ColCount = 10
     DefaultDrawing = False
-    DefaultRowHeight = 24
+    DefaultRowHeight = 30
     ExtendedSelect = False
     Flat = True
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Ubuntu Mono'
+    Font.Pitch = fpFixed
+    Font.Quality = fqDraft
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowMoving, goSmoothScroll, goRowHighlight]
+    ParentFont = False
     RowCount = 1
     ScrollBars = ssAutoVertical
     TabOrder = 0
@@ -190,6 +197,12 @@ object frmMain: TfrmMain
     ChildSizing.HorizontalSpacing = 4
     ClientHeight = 32
     ClientWidth = 832
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Ubuntu Mono'
+    Font.Pitch = fpFixed
+    Font.Quality = fqDraft
+    ParentFont = False
     TabOrder = 1
     object btnClear: TSpeedButton
       Left = 800
@@ -382,6 +395,13 @@ object frmMain: TfrmMain
         Caption = '&Delete'
         ShortCut = 16472
         OnClick = mnuMainEditDeleteClick
+      end
+    end
+    object mnuMainTools: TMenuItem
+      Caption = 'Tools'
+      object mnuMainToolsOptions: TMenuItem
+        Caption = '&Options'
+        OnClick = mnuMainToolsOptionsClick
       end
     end
   end

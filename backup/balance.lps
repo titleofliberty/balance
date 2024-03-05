@@ -12,7 +12,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="60"/>
       </Unit>
       <Unit>
         <Filename Value="mainform.pas"/>
@@ -20,10 +20,10 @@
         <ComponentName Value="frmMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="193"/>
-        <CursorPos X="29" Y="200"/>
-        <FoldState Value=" T8i5241 T3iN0E31612 Pl8n10 T6j301222 T1if02281 Pj6mL]R0j922783]HJlf4?"/>
-        <UsageCount Value="55"/>
+        <TopLine Value="270"/>
+        <CursorPos X="57" Y="278"/>
+        <FoldState Value=" T8i8241 T3iQ0E2161113 PjYnL0 T6j601142 T1j1021A]f0jC220H24"/>
+        <UsageCount Value="60"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -34,10 +34,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="81"/>
-        <CursorPos X="30" Y="93"/>
-        <UsageCount Value="48"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="12"/>
+        <CursorPos X="18" Y="49"/>
+        <FoldState Value=" T4602 T7EKV T8e221 T3iD086 PiLic0 T1iO095]F2iS]F0iT22]p6ia011d"/>
+        <UsageCount Value="53"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -47,16 +48,16 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="3"/>
         <CursorPos X="12" Y="25"/>
-        <UsageCount Value="47"/>
-        <DefaultSyntaxHighlighter Value="None"/>
+        <UsageCount Value="52"/>
+        <DefaultSyntaxHighlighter Value="Text"/>
       </Unit>
       <Unit>
         <Filename Value="categories.txt"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="7" Y="13"/>
-        <UsageCount Value="47"/>
-        <DefaultSyntaxHighlighter Value="None"/>
+        <UsageCount Value="52"/>
+        <DefaultSyntaxHighlighter Value="Text"/>
       </Unit>
       <Unit>
         <Filename Value="balanceframe.pas"/>
@@ -114,49 +115,28 @@
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\fpc\3.2.2\source\packages\rtl-objpas\src\inc\dateutil.inc"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="295"/>
         <CursorPos X="10" Y="303"/>
         <UsageCount Value="11"/>
+      </Unit>
+      <Unit>
+        <Filename Value="optionsform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmOptions"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="14"/>
+        <CursorPos X="9" Y="40"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
     </Units>
     <Debugger>
       <Backend Value="{46F8D863-C46A-4513-87F7-05B4F05262FC}"/>
     </Debugger>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="58" Column="3" TopLine="56"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="79" Column="5" TopLine="63"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="73" Column="49" TopLine="65"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="85" Column="13" TopLine="78"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="100" TopLine="86"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="9" Column="32"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="70" Column="33" TopLine="62"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="71" Column="65" TopLine="59"/>
-      </Position>
       <Position>
         <Filename Value="transactionform.pas"/>
         <Caret Line="40" Column="29" TopLine="33"/>
@@ -244,6 +224,37 @@
       <Position>
         <Filename Value="transactionform.pas"/>
         <Caret Line="42" Column="17" TopLine="31"/>
+      </Position>
+      <Position>
+        <Filename Value="transactionform.pas"/>
+        <Caret Line="93" Column="30" TopLine="81"/>
+      </Position>
+      <Position>
+        <Filename Value="transactionform.pas"/>
+        <Caret Line="59" TopLine="12"/>
+      </Position>
+      <Position>
+        <Filename Value="transactionform.pas"/>
+        <Caret Line="60" TopLine="12"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="138" Column="17" TopLine="262"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="139" Column="17" TopLine="139"/>
+      </Position>
+      <Position>
+        <Filename Value="optionsform.pas"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="141" Column="17" TopLine="141"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="8" Column="90"/>
       </Position>
     </JumpHistory>
     <RunParams>
