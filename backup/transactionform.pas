@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Calendar,
-  Spin, ExtCtrls, EditBtn, DateUtils;
+  Spin, ExtCtrls, EditBtn, DateUtils, StrUtils;
 
 type
 
@@ -34,7 +34,6 @@ type
     txtCategory: TComboBox;
     txtDescription: TComboBox;
     procedure btnEndsOnClick(Sender: TObject);
-    procedure btnSaveClick(Sender: TObject);
     procedure calDateChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure txtRepeatChange(Sender: TObject);
@@ -79,14 +78,24 @@ end;
 procedure TfrmTransaction.PopulateRepeats;
 var
   sl : TStringList;
+  dn, mn : string;
+  d, m, n, w: integer;
 begin
   sl := TStringList.Create;
 
+  d := DayOf(calDate.DateTime);
+  m := MonthOf(calDate.DateTime);
+  w := DayOfWeek(calDate.DateTime);
+  n := NthDayOfWeek(calDate.DateTime);
+  mn := DefaultFormatSettings.LongMonthNames[m];
+  dn := DefaultFormatSettings.LongDayNames[w];
+
   sl.Add('Does not repeat');
-  sl.Add('Daily');
-  sl.Add(Format('Weekly on %s', [LongDayNames[DayOfWeek(calDate.DateTime)]]));
-  sl.Add(Format('Weekly on %s %s', [NthStr(NthDayOfWeek(calDate.DateTime)), LongDayNames[DayOfWeek(calDate.DateTime)]]));
-  sl.Add(Format('Annually on %s %d', [LongMonthNames[MonthOf(calDate.DateTime)], DayOf(calDate.DateTime)]));
+  sl.Add(Format('Weekly on %s', [dn]));
+  sl.Add(Format('Monthly on %s', [NthStr(d)]));
+  sl.Add(Format('Monthly on %s %s', [NthStr(n), dn]));
+  sl.Add(Format('Annually on %s %s', [mn, NthStr(d)]));
+  sl.Add(Format('Annually on %s %s of %s', [NthStr(n), dn, mn]));
 
   txtRepeat.Items.AddStrings(sl, true);
   txtRepeat.ItemIndex := 0;
@@ -96,19 +105,19 @@ begin
 end;
 
 function TfrmTransaction.NthStr(Nth: integer): string;
+var
+  s, r: string;
 begin
-  if Nth = 1 then
-    result := '1st'
-  else if Nth = 2 then
-    result := '2nd'
-  else if Nth = 3 then
-    result := '3rd'
-  else if Nth = 4 then
-    result := '4th'
-  else if Nth = 5 then
-    result := '5th'
+  s := Nth.ToString;
+  r := RightStr(s, 1);
+  if r = '1' then
+    result := s + 'st'
+  else if r = '2' then
+    result := s + 'nd'
+  else if r = '3' then
+    result := s + 'rd'
   else
-    result := '';
+    result := s + 'th';
 end;
 
 procedure TfrmTransaction.btnEndsOnClick(Sender: TObject);

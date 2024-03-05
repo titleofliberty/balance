@@ -1,7 +1,7 @@
 object frmTransaction: TfrmTransaction
-  Left = 562
+  Left = 451
   Height = 474
-  Top = 99
+  Top = 462
   Width = 560
   BorderStyle = bsDialog
   Caption = 'Transaction'
@@ -106,7 +106,6 @@ object frmTransaction: TfrmTransaction
     Default = True
     ModalResult = 1
     TabOrder = 8
-    OnClick = btnSaveClick
   end
   object btnCancel: TButton
     Left = 444

@@ -12,7 +12,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="60"/>
+        <UsageCount Value="62"/>
       </Unit>
       <Unit>
         <Filename Value="mainform.pas"/>
@@ -22,7 +22,7 @@
         <ResourceBaseClass Value="Form"/>
         <TopLine Value="4"/>
         <CursorPos X="3" Y="229"/>
-        <UsageCount Value="60"/>
+        <UsageCount Value="62"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -34,10 +34,10 @@
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="23"/>
-        <CursorPos Y="37"/>
-        <FoldState Value=" T4602 T8d221 T3iM0A4 PciA0 T1iN09112 PJ[G50iS2]i6iZ01)"/>
-        <UsageCount Value="53"/>
+        <TopLine Value="82"/>
+        <CursorPos X="36" Y="99"/>
+        <FoldState Value=" T8g21 T3iM0A012 PIiH0 T1iN090[Q40iS22%"/>
+        <UsageCount Value="55"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -47,7 +47,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="3"/>
         <CursorPos X="12" Y="25"/>
-        <UsageCount Value="52"/>
+        <UsageCount Value="54"/>
         <DefaultSyntaxHighlighter Value="Text"/>
       </Unit>
       <Unit>
@@ -55,7 +55,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="7" Y="13"/>
-        <UsageCount Value="52"/>
+        <UsageCount Value="54"/>
         <DefaultSyntaxHighlighter Value="Text"/>
       </Unit>
       <Unit>
@@ -67,7 +67,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="14"/>
         <CursorPos X="9" Y="40"/>
-        <UsageCount Value="23"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -132,39 +132,19 @@
         <CursorPos X="10" Y="303"/>
         <UsageCount Value="11"/>
       </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\..\usr\share\fpcsrc\3.2.2\rtl\objpas\sysutils\sysinth.inc"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="42"/>
+        <CursorPos X="3" Y="57"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit>
     </Units>
     <Debugger>
       <Backend Value="{46F8D863-C46A-4513-87F7-05B4F05262FC}"/>
     </Debugger>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="60" Column="19" TopLine="54"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="107" Column="19" TopLine="95"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="78" Column="77" TopLine="70"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="82" Column="62" TopLine="70"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="80" Column="88" TopLine="70"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="76" Column="48" TopLine="68"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="74" Column="28" TopLine="68"/>
-      </Position>
       <Position>
         <Filename Value="transactionform.pas"/>
         <Caret Line="89" Column="95" TopLine="84"/>
@@ -255,6 +235,34 @@
       <Position>
         <Filename Value="transactionform.pas"/>
         <Caret Line="49" Column="44" TopLine="10"/>
+      </Position>
+      <Position>
+        <Filename Value="transactionform.pas"/>
+        <Caret Line="42" Column="23" TopLine="29"/>
+      </Position>
+      <Position>
+        <Filename Value="transactionform.pas"/>
+        <Caret Line="84" TopLine="78"/>
+      </Position>
+      <Position>
+        <Filename Value="transactionform.pas"/>
+        <Caret Line="86" TopLine="78"/>
+      </Position>
+      <Position>
+        <Filename Value="transactionform.pas"/>
+        <Caret Line="87" TopLine="78"/>
+      </Position>
+      <Position>
+        <Filename Value="transactionform.pas"/>
+        <Caret Line="88" TopLine="78"/>
+      </Position>
+      <Position>
+        <Filename Value="transactionform.pas"/>
+        <Caret Line="89" TopLine="78"/>
+      </Position>
+      <Position>
+        <Filename Value="transactionform.pas"/>
+        <Caret Line="90" TopLine="78"/>
       </Position>
     </JumpHistory>
     <RunParams>
