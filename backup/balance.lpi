@@ -63,6 +63,7 @@
         <Filename Value="optionsform.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmOptions"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit>
     </Units>

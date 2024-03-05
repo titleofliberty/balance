@@ -12,7 +12,7 @@ object frmMain: TfrmMain
   ClientWidth = 848
   Font.CharSet = ANSI_CHARSET
   Font.Height = -16
-  Font.Name = 'Courier New'
+  Font.Name = 'Ubuntu Mono'
   Font.Pitch = fpFixed
   Font.Quality = fqDraft
   Icon.Data = {
@@ -168,13 +168,13 @@ object frmMain: TfrmMain
     AutoEdit = False
     ColCount = 10
     DefaultDrawing = False
-    DefaultRowHeight = 24
+    DefaultRowHeight = 30
     ExtendedSelect = False
     Flat = True
     Font.CharSet = ANSI_CHARSET
     Font.Color = clWhite
     Font.Height = -16
-    Font.Name = 'Courier New'
+    Font.Name = 'Ubuntu Mono'
     Font.Pitch = fpFixed
     Font.Quality = fqDraft
     Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRowMoving, goSmoothScroll, goRowHighlight]
@@ -197,6 +197,12 @@ object frmMain: TfrmMain
     ChildSizing.HorizontalSpacing = 4
     ClientHeight = 32
     ClientWidth = 832
+    Font.CharSet = ANSI_CHARSET
+    Font.Height = -16
+    Font.Name = 'Ubuntu Mono'
+    Font.Pitch = fpFixed
+    Font.Quality = fqDraft
+    ParentFont = False
     TabOrder = 1
     object btnClear: TSpeedButton
       Left = 800

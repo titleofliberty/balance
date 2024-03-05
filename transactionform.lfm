@@ -106,7 +106,6 @@ object frmTransaction: TfrmTransaction
     Default = True
     ModalResult = 1
     TabOrder = 8
-    OnClick = btnSaveClick
   end
   object btnCancel: TButton
     Left = 444

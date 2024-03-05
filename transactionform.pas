@@ -34,7 +34,6 @@ type
     txtCategory: TComboBox;
     txtDescription: TComboBox;
     procedure btnEndsOnClick(Sender: TObject);
-    procedure btnSaveClick(Sender: TObject);
     procedure calDateChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure txtRepeatChange(Sender: TObject);
@@ -109,24 +108,6 @@ begin
     result := '5th'
   else
     result := '';
-end;
-
-procedure TfrmTransaction.btnSaveClick(Sender: TObject);
-var
-  desc, cat: string;
-begin
-  if txtDescription.ItemIndex = -1 then
-  begin
-    desc := Trim(txtDescription.Text);
-    txtDescription.Items.Add(desc);
-    txtDescription.Items.SaveToFile('descriptions.txt');
-  end;
-  if txtCategory.ItemIndex = -1 then
-  begin
-    cat := Trim(txtCategory.Text);
-    txtCategory.Items.Add(cat);
-    txtCategory.Items.SaveToFile('categories.txt');
-  end;
 end;
 
 procedure TfrmTransaction.btnEndsOnClick(Sender: TObject);

@@ -1,7 +1,7 @@
 object frmMain: TfrmMain
-  Left = 420
+  Left = 355
   Height = 564
-  Top = 76
+  Top = 204
   Width = 848
   Caption = 'Balance'
   ChildSizing.LeftRightSpacing = 8

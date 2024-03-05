@@ -98,10 +98,10 @@ object frmTransaction: TfrmTransaction
     TabOrder = 3
   end
   object btnSave: TButton
-    Left = 356
-    Height = 30
-    Top = 432
-    Width = 75
+    Left = 336
+    Height = 32
+    Top = 424
+    Width = 100
     Caption = 'Save'
     Default = True
     ModalResult = 1
@@ -109,10 +109,10 @@ object frmTransaction: TfrmTransaction
     OnClick = btnSaveClick
   end
   object btnCancel: TButton
-    Left = 449
-    Height = 30
-    Top = 432
-    Width = 75
+    Left = 444
+    Height = 32
+    Top = 424
+    Width = 100
     Cancel = True
     Caption = 'Cancel'
     ModalResult = 2

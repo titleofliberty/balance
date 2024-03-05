@@ -20,9 +20,8 @@
         <ComponentName Value="frmMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="270"/>
-        <CursorPos X="57" Y="278"/>
-        <FoldState Value=" T8i8241 T3iQ0E2161113 PjYnL0 T6j601142 T1j1021A]f0jC220H24"/>
+        <TopLine Value="4"/>
+        <CursorPos X="3" Y="229"/>
         <UsageCount Value="60"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -35,9 +34,9 @@
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="12"/>
-        <CursorPos X="18" Y="49"/>
-        <FoldState Value=" T4602 T7EKV T8e221 T3iD086 PiLic0 T1iO095]F2iS]F0iT22]p6ia011d"/>
+        <TopLine Value="10"/>
+        <CursorPos X="44" Y="49"/>
+        <FoldState Value=" T4602 T7EKV T8e221 T3iN0A4 PciA0 T1iO09112 PJ[G50iT2]o6ia01B"/>
         <UsageCount Value="53"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -58,6 +57,19 @@
         <CursorPos X="7" Y="13"/>
         <UsageCount Value="52"/>
         <DefaultSyntaxHighlighter Value="Text"/>
+      </Unit>
+      <Unit>
+        <Filename Value="optionsform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmOptions"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="14"/>
+        <CursorPos X="9" Y="40"/>
+        <UsageCount Value="23"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="balanceframe.pas"/>
@@ -120,27 +132,11 @@
         <CursorPos X="10" Y="303"/>
         <UsageCount Value="11"/>
       </Unit>
-      <Unit>
-        <Filename Value="optionsform.pas"/>
-        <IsPartOfProject Value="True"/>
-        <ComponentName Value="frmOptions"/>
-        <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="14"/>
-        <CursorPos X="9" Y="40"/>
-        <UsageCount Value="23"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
-      </Unit>
     </Units>
     <Debugger>
       <Backend Value="{46F8D863-C46A-4513-87F7-05B4F05262FC}"/>
     </Debugger>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="40" Column="29" TopLine="33"/>
-      </Position>
       <Position>
         <Filename Value="transactionform.pas"/>
         <Caret Line="78" Column="16" TopLine="76"/>
@@ -239,10 +235,6 @@
       </Position>
       <Position>
         <Filename Value="mainform.pas"/>
-        <Caret Line="138" Column="17" TopLine="262"/>
-      </Position>
-      <Position>
-        <Filename Value="mainform.pas"/>
         <Caret Line="139" Column="17" TopLine="139"/>
       </Position>
       <Position>
@@ -255,6 +247,14 @@
       <Position>
         <Filename Value="mainform.pas"/>
         <Caret Line="8" Column="90"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="278" Column="57" TopLine="270"/>
+      </Position>
+      <Position>
+        <Filename Value="transactionform.pas"/>
+        <Caret Line="117" TopLine="47"/>
       </Position>
     </JumpHistory>
     <RunParams>
