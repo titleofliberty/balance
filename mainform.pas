@@ -54,6 +54,7 @@ type
     procedure CalcBalance();
     procedure PopulateForm(ARow: integer; AForm: TfrmTransaction);
     procedure UpdateGrid(ARow: integer; AForm: TfrmTransaction);
+    procedure InsertRow(ARow: integer; ADate: TDateTime; ADesc, ACat: string; AAmount: Double; ACredit, ACleared: Boolean);
   public
 
   end;
@@ -408,6 +409,31 @@ begin
   grdMain.Cells[4, ARow] := FormatCurr('$#,##0.00', amt);
 
   if (AForm.chkCleared.Checked) then
+    grdMain.Cells[6, ARow] := 'c'
+  else
+    grdMain.Cells[6, ARow] := '';
+
+  CalcBalance();
+end;
+
+procedure TfrmMain.InsertRow(ARow: integer; ADate: TDateTime; ADesc,
+  ACat: string; AAmount: Double; ACredit, ACleared: Boolean);
+var
+  amt: Double;
+begin
+  grdMain.Cells[1, ARow] := FormatDateTime('yyyy-mm-dd', ADate);
+  grdMain.Cells[2, ARow] := ADesc;
+  grdMain.Cells[3, ARow] := ACat;
+  amt := AAmount;
+
+  if (ACredit) and (amt < 0) then
+    amt := amt * -1
+  else if (ACredit = false) and (amt > 0) then
+    amt := amt * -1;
+
+  grdMain.Cells[4, ARow] := FormatCurr('$#,##0.00', amt);
+
+  if (ACleared) then
     grdMain.Cells[6, ARow] := 'c'
   else
     grdMain.Cells[6, ARow] := '';

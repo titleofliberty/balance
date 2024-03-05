@@ -20,8 +20,10 @@
         <ComponentName Value="frmMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="4"/>
-        <CursorPos X="3" Y="229"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="404"/>
+        <CursorPos X="5" Y="440"/>
+        <FoldState Value=" T4602 T8iE21 T3iR0E3 pjKjg0E116]B4k9063 Pi1V0 T6iS023]PPEnd]G1iV0A[o47jf0B118 pidkN0C1 PMH]X0iX277]MZj96521D]i5m043 TMk721\"/>
         <UsageCount Value="62"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -32,11 +34,10 @@
         <ComponentName Value="frmTransaction"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="82"/>
-        <CursorPos X="36" Y="99"/>
-        <FoldState Value=" T8g21 T3iM0A012 PIiH0 T1iN090[Q40iS22%"/>
+        <TopLine Value="85"/>
+        <CursorPos Y="78"/>
+        <FoldState Value=" T8g21 T3iC08113 PVia0 T1iN090[Q40iS22c"/>
         <UsageCount Value="55"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -147,42 +148,6 @@
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="transactionform.pas"/>
-        <Caret Line="89" Column="95" TopLine="84"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="65" Column="3" TopLine="65"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="112" Column="60" TopLine="105"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="123" Column="42" TopLine="107"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="73" Column="25" TopLine="65"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="43" Column="40" TopLine="36"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="88" Column="76" TopLine="76"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="106" Column="21" TopLine="99"/>
-      </Position>
-      <Position>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="379" Column="6" TopLine="288"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
         <Caret Line="88" Column="30" TopLine="79"/>
       </Position>
       <Position>
@@ -263,6 +228,42 @@
       <Position>
         <Filename Value="transactionform.pas"/>
         <Caret Line="90" TopLine="78"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="57" Column="56" TopLine="45"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="419" Column="3" TopLine="396"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="57" Column="77" TopLine="43"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="419" Column="61" TopLine="396"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="57" Column="92" TopLine="57"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="420" Column="3" TopLine="397"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="57" Column="121" TopLine="43"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="420" Column="14" TopLine="416"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="57" Column="101" TopLine="43"/>
       </Position>
     </JumpHistory>
     <RunParams>

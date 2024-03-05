@@ -98,7 +98,10 @@ begin
   else
     sl.Add(Format('Monthly on last %s', [dn]));
   sl.Add(Format('Annually on %s %s', [mn, NthStr(d)]));
-  sl.Add(Format('Annually on %s %s of %s', [NthStr(n), dn, mn]));
+  if n < 4 then
+    sl.Add(Format('Annually on %s %s of %s', [NthStr(n), dn, mn]))
+  else
+    sl.Add(Format('Annually on last %s of %s', [dn, mn]));
 
   txtRepeat.Items.AddStrings(sl, true);
   txtRepeat.ItemIndex := 0;
