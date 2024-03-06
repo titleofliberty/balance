@@ -5,8 +5,9 @@ unit mainform;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, optionsform,
-  Menus, Buttons, Grids, StrUtils, DateUtils, LCLType, transactionform, IniFiles, Types;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
+  optionsform, Menus, Buttons, Grids, StrUtils, DateUtils, LCLType, ComCtrls,
+  transactionform, IniFiles, Types;
 
 type
 
@@ -17,8 +18,12 @@ type
     dlgSave: TSaveDialog;
     btnInsert: TSpeedButton;
     btnDelete: TSpeedButton;
+    lblBalance: TLabel;
+    lblDebits: TLabel;
+    lblCredits: TLabel;
     mnuMainToolsOptions: TMenuItem;
     mnuMainTools: TMenuItem;
+    pnlStatus: TPanel;
     txtFilter: TEdit;
     grdMain: TStringGrid;
     mnuMainEditInsert: TMenuItem;
@@ -54,6 +59,7 @@ type
     procedure CalcBalance();
     procedure PopulateForm(ARow: integer; AForm: TfrmTransaction);
     procedure UpdateGrid(ARow: integer; AForm: TfrmTransaction);
+    procedure InsertRow(ARow: integer; ADate: TDateTime; ADesc, ACat: string; AAmount: Double; ACredit, ACleared: Boolean);
   public
 
   end;
@@ -315,6 +321,7 @@ begin
   begin
     grdMain.LoadFromCSVFile(FFileName);
     Caption := Format('Balance - %s', [FFileName]);
+    CalcBalance;
   end
   else
   begin
@@ -349,18 +356,25 @@ end;
 procedure TfrmMain.CalcBalance;
 var
   r: integer;
-  b, a: Double;
+  b, d, c, a: Double;
 begin
   b := 0;
+  d := 0;
+  c := 0;
   for r := grdMain.RowCount - 1 downto 1 do
   begin
     if grdMain.Cells[4, r] <> '' then
       a := grdMain.Cells[4, r].Replace('$', '').Replace(',', '').ToDouble
     else
       a := 0;
+    if a < 0 then d := d + a;
+    if a > 0 then c := c + a;
     b := b + a;
     grdMain.Cells[5, r] := FormatCurr('$#,##0.00', b);
   end;
+  lblCredits.Caption := Format('Credits: %s', [FormatCurr('$#,##0.00', c)]);
+  lblDebits.Caption := Format('Debits: %s', [FormatCurr('$#,##0.00', d)]);
+  lblBalance.Caption := Format('Credits: %s', [FormatCurr('$#,##0.00', b)]);
   grdMain.SaveToCSVFile(FFileName);
 end;
 
@@ -408,6 +422,31 @@ begin
   grdMain.Cells[4, ARow] := FormatCurr('$#,##0.00', amt);
 
   if (AForm.chkCleared.Checked) then
+    grdMain.Cells[6, ARow] := 'c'
+  else
+    grdMain.Cells[6, ARow] := '';
+
+  CalcBalance();
+end;
+
+procedure TfrmMain.InsertRow(ARow: integer; ADate: TDateTime; ADesc,
+  ACat: string; AAmount: Double; ACredit, ACleared: Boolean);
+var
+  amt: Double;
+begin
+  grdMain.Cells[1, ARow] := FormatDateTime('yyyy-mm-dd', ADate);
+  grdMain.Cells[2, ARow] := ADesc;
+  grdMain.Cells[3, ARow] := ACat;
+  amt := AAmount;
+
+  if (ACredit) and (amt < 0) then
+    amt := amt * -1
+  else if (ACredit = false) and (amt > 0) then
+    amt := amt * -1;
+
+  grdMain.Cells[4, ARow] := FormatCurr('$#,##0.00', amt);
+
+  if (ACleared) then
     grdMain.Cells[6, ARow] := 'c'
   else
     grdMain.Cells[6, ARow] := '';

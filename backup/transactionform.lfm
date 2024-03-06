@@ -1,7 +1,7 @@
 object frmTransaction: TfrmTransaction
-  Left = 451
+  Left = 410
   Height = 474
-  Top = 462
+  Top = 478
   Width = 560
   BorderStyle = bsDialog
   Caption = 'Transaction'

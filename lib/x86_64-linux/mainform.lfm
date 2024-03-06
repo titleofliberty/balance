@@ -161,7 +161,7 @@ object frmMain: TfrmMain
   LCLVersion = '3.2.0.0'
   object grdMain: TStringGrid
     Left = 8
-    Height = 508
+    Height = 468
     Top = 48
     Width = 832
     Align = alClient
@@ -346,6 +346,67 @@ object frmMain: TfrmMain
         FFD40030FF8F002FFF2B00000000000000000000000000000000
       }
       OnClick = mnuMainEditDeleteClick
+    end
+  end
+  object pnlStatus: TPanel
+    Left = 8
+    Height = 32
+    Top = 524
+    Width = 832
+    Align = alBottom
+    ClientHeight = 32
+    ClientWidth = 832
+    TabOrder = 2
+    object lblBalance: TLabel
+      Left = 687
+      Height = 30
+      Top = 1
+      Width = 144
+      Align = alRight
+      BorderSpacing.Left = 16
+      Caption = 'Balance: $#,##0.00'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = 16757603
+      Font.Height = -16
+      Font.Name = 'Ubuntu Mono'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Layout = tlCenter
+      ParentFont = False
+    end
+    object lblDebits: TLabel
+      Left = 535
+      Height = 30
+      Top = 1
+      Width = 136
+      Align = alRight
+      BorderSpacing.Left = 16
+      Caption = 'Debits: $#,##0.00'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = 7105758
+      Font.Height = -16
+      Font.Name = 'Ubuntu Mono'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Layout = tlCenter
+      ParentFont = False
+    end
+    object lblCredits: TLabel
+      Left = 375
+      Height = 30
+      Top = 1
+      Width = 144
+      Align = alRight
+      BorderSpacing.Left = 16
+      Caption = 'Credits: $#,##0.00'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = 7325807
+      Font.Height = -16
+      Font.Name = 'Ubuntu Mono'
+      Font.Pitch = fpFixed
+      Font.Quality = fqDraft
+      Layout = tlCenter
+      ParentFont = False
     end
   end
   object dlgOpen: TOpenDialog

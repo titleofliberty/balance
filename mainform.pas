@@ -5,8 +5,9 @@ unit mainform;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls, optionsform,
-  Menus, Buttons, Grids, StrUtils, DateUtils, LCLType, transactionform, IniFiles, Types;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ExtCtrls, StdCtrls,
+  optionsform, Menus, Buttons, Grids, StrUtils, DateUtils, LCLType, ComCtrls,
+  transactionform, IniFiles, Types;
 
 type
 
@@ -17,8 +18,12 @@ type
     dlgSave: TSaveDialog;
     btnInsert: TSpeedButton;
     btnDelete: TSpeedButton;
+    lblBalance: TLabel;
+    lblDebits: TLabel;
+    lblCredits: TLabel;
     mnuMainToolsOptions: TMenuItem;
     mnuMainTools: TMenuItem;
+    pnlStatus: TPanel;
     txtFilter: TEdit;
     grdMain: TStringGrid;
     mnuMainEditInsert: TMenuItem;
@@ -223,19 +228,51 @@ end;
 
 procedure TfrmMain.mnuMainEditInsertClick(Sender: TObject);
 var
-  row : integer;
+  row, cnt, i : integer;
+  sd, ed, sp : TDateTime;
   amt : Double;
   frm : TfrmTransaction;
+  occ, cdt, cld : boolean;
+  desc, cat : string;
 begin
+  occ := false;
   frm := TfrmTransaction.Create(Self);
   PopulateForm(0, frm);
   if frm.ShowModal = mrOk then
   begin
-    row := 1;
-    if grdMain.RowCount > 1 then row := grdMain.Row;
-    grdMain.InsertColRow(false, row);
-    UpdateGrid(row, frm);
-    grdMain.Row := row;
+    sd   := frm.calDate.DateTime;
+    sp   := frm.calDate.DateTime;
+    ed   := frm.txtEndsOn.Date;
+    occ  := frm.btnEndsOccurrences.Checked;
+    cnt  := frm.txtEndsOccurrences.Value;
+    cat  := frm.txtCategory.Text;
+    cdt  := frm.chkIncome.Checked;
+    cld  := frm.chkCleared.Checked;
+    desc := frm.txtDescription.Text;
+
+    if frm.txtRepeat.ItemIndex = 0 then // No repeat
+    begin
+      row := 1;
+      if grdMain.RowCount > 1 then row := grdMain.Row;
+      grdMain.InsertColRow(false, row);
+      UpdateGrid(row, frm);
+      grdMain.Row := row;
+    end
+    else if frm.txtRepeat.ItemIndex = 1 then // Weekly
+    begin
+      if occ then
+      begin
+        for i := 0 to cnt - 1 do
+        begin
+          InsertRow(1, sp, desc, cat, amt, cdt, cld);
+          sp := IncWeek(sp);
+        end;
+      end
+      else
+      begin
+
+      end;
+    end;
   end;
 end;
 
@@ -316,6 +353,7 @@ begin
   begin
     grdMain.LoadFromCSVFile(FFileName);
     Caption := Format('Balance - %s', [FFileName]);
+    CalcBalance;
   end
   else
   begin
@@ -350,18 +388,25 @@ end;
 procedure TfrmMain.CalcBalance;
 var
   r: integer;
-  b, a: Double;
+  b, d, c, a: Double;
 begin
   b := 0;
+  d := 0;
+  c := 0;
   for r := grdMain.RowCount - 1 downto 1 do
   begin
     if grdMain.Cells[4, r] <> '' then
       a := grdMain.Cells[4, r].Replace('$', '').Replace(',', '').ToDouble
     else
       a := 0;
+    if a < 0 then d := d + a;
+    if a > 0 then c := c + a;
     b := b + a;
     grdMain.Cells[5, r] := FormatCurr('$#,##0.00', b);
   end;
+  lblCredits.Caption := Format('Credits: %s', [FormatCurr('$#,##0.00', c)]);
+  lblDebits.Caption := Format('Debits: %s', [FormatCurr('$#,##0.00', d)]);
+  lblBalance.Caption := Format('Credits: %s', [FormatCurr('$#,##0.00', b)]);
   grdMain.SaveToCSVFile(FFileName);
 end;
 
@@ -419,7 +464,7 @@ end;
 procedure TfrmMain.InsertRow(ARow: integer; ADate: TDateTime; ADesc,
   ACat: string; AAmount: Double; ACredit, ACleared: Boolean);
 var
-  amt: Double;
+  amt: double;
 begin
   grdMain.Cells[1, ARow] := FormatDateTime('yyyy-mm-dd', ADate);
   grdMain.Cells[2, ARow] := ADesc;
