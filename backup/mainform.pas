@@ -228,19 +228,51 @@ end;
 
 procedure TfrmMain.mnuMainEditInsertClick(Sender: TObject);
 var
-  row : integer;
+  row, cnt, i : integer;
+  sd, ed, sp : TDateTime;
   amt : Double;
   frm : TfrmTransaction;
+  occ, cdt, cld : boolean;
+  desc, cat : string;
 begin
+  occ := false;
   frm := TfrmTransaction.Create(Self);
   PopulateForm(0, frm);
   if frm.ShowModal = mrOk then
   begin
-    row := 1;
-    if grdMain.RowCount > 1 then row := grdMain.Row;
-    grdMain.InsertColRow(false, row);
-    UpdateGrid(row, frm);
-    grdMain.Row := row;
+    sd   := frm.calDate.DateTime;
+    sp   := frm.calDate.DateTime;
+    ed   := frm.txtEndsOn.Date;
+    occ  := frm.btnEndsOccurrences.Checked;
+    cnt  := frm.txtEndsOccurrences.Value;
+    cat  := frm.txtCategory.Text;
+    cdt  := frm.chkIncome.Checked;
+    cld  := frm.chkCleared.Checked;
+    desc := frm.txtDescription.Text;
+
+    if frm.txtRepeat.ItemIndex = 0 then // No repeat
+    begin
+      row := 1;
+      if grdMain.RowCount > 1 then row := grdMain.Row;
+      grdMain.InsertColRow(false, row);
+      UpdateGrid(row, frm);
+      grdMain.Row := row;
+    end
+    else if frm.txtRepeat.ItemIndex = 1 then // Weekly
+    begin
+      if occ then
+      begin
+        for i := 0 to cnt - 1 do
+        begin
+          InsertRow(1, sp, desc, cat, amt, cdt, cld);
+          sp := IncWeek(sp);
+        end;
+      end
+      else
+      begin
+
+      end;
+    end;
   end;
 end;
 
@@ -432,7 +464,7 @@ end;
 procedure TfrmMain.InsertRow(ARow: integer; ADate: TDateTime; ADesc,
   ACat: string; AAmount: Double; ACredit, ACleared: Boolean);
 var
-  amt: Double;
+  amt: double;
 begin
   grdMain.Cells[1, ARow] := FormatDateTime('yyyy-mm-dd', ADate);
   grdMain.Cells[2, ARow] := ADesc;

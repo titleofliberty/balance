@@ -406,7 +406,7 @@ begin
   end;
   lblCredits.Caption := Format('Credits: %s', [FormatCurr('$#,##0.00', c)]);
   lblDebits.Caption := Format('Debits: %s', [FormatCurr('$#,##0.00', d)]);
-  lblBalance.Caption := Format('Credits: %s', [FormatCurr('$#,##0.00', b)]);
+  lblBalance.Caption := Format('Balance: %s', [FormatCurr('$#,##0.00', b)]);
   grdMain.SaveToCSVFile(FFileName);
 end;
 

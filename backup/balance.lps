@@ -12,7 +12,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="63"/>
+        <UsageCount Value="64"/>
       </Unit>
       <Unit>
         <Filename Value="mainform.pas"/>
@@ -21,10 +21,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="360"/>
-        <CursorPos X="72" Y="377"/>
-        <FoldState Value=" T8iJ21 T3iW0E3 pjKjg0E71213 PkSmD0 T6iX023]J111 PBoV]K1ia0A[m47jf0B11512[T4ialW]U0ic277 piZj9652162]^]USm84 TMkC21I"/>
-        <UsageCount Value="63"/>
+        <TopLine Value="258"/>
+        <CursorPos X="29" Y="268"/>
+        <FoldState Value=" T8iJ21 T3iW0E3 pjKjg0E116]B5kg064 PiUiM0 T6iX023121111 PBoa]K1ia0A[t47jf0B115[V4]oalb]U0ic277 piZj9652662213]USme4 TMkC21p"/>
+        <UsageCount Value="64"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -37,7 +37,7 @@
         <EditorIndex Value="2"/>
         <TopLine Value="85"/>
         <CursorPos Y="78"/>
-        <UsageCount Value="56"/>
+        <UsageCount Value="57"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -47,7 +47,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="3"/>
         <CursorPos X="12" Y="25"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="56"/>
         <DefaultSyntaxHighlighter Value="Text"/>
       </Unit>
       <Unit>
@@ -55,7 +55,7 @@
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="7" Y="13"/>
-        <UsageCount Value="55"/>
+        <UsageCount Value="56"/>
         <DefaultSyntaxHighlighter Value="Text"/>
       </Unit>
       <Unit>
@@ -67,7 +67,7 @@
         <EditorIndex Value="1"/>
         <TopLine Value="14"/>
         <CursorPos X="9" Y="40"/>
-        <UsageCount Value="26"/>
+        <UsageCount Value="27"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -137,7 +137,7 @@
         <EditorIndex Value="3"/>
         <TopLine Value="42"/>
         <CursorPos X="3" Y="57"/>
-        <UsageCount Value="11"/>
+        <UsageCount Value="12"/>
         <Loaded Value="True"/>
       </Unit>
     </Units>
@@ -145,10 +145,6 @@
       <Backend Value="{46F8D863-C46A-4513-87F7-05B4F05262FC}"/>
     </Debugger>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="mainform.pas"/>
-        <Caret Line="139" Column="17" TopLine="139"/>
-      </Position>
       <Position>
         <Filename Value="optionsform.pas"/>
       </Position>
@@ -263,6 +259,10 @@
       <Position>
         <Filename Value="mainform.pas"/>
         <Caret Line="324" Column="17" TopLine="275"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="356" TopLine="68"/>
       </Position>
     </JumpHistory>
     <RunParams>
