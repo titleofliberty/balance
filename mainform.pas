@@ -138,7 +138,7 @@ begin
   if (gdFixed in aState) then
     grd.Canvas.Brush.Color := clForm
   else if (gdRowHighlight in aState) then
-    grd.Canvas.Brush.Color := $F1D6AE;
+    grd.Canvas.Brush.Color := $311f24; // $F1D6AE;
   //else if ((aRow mod 2) = 0) and (aRow > 0) then
   //  grd.Canvas.Brush.Color := $DFEFD4;
 
@@ -151,7 +151,7 @@ begin
       if grd.Cells[6, aRow] = 'c' then
         grd.Canvas.Font.Color := $968B80
       else if (gdRowHighlight in aState) then
-        grd.Canvas.Font.Color := $000000
+        grd.Canvas.Font.Color := $ffffff // $000000
       else
         grd.Canvas.Font.Color := $ffffff;
     end
@@ -163,9 +163,9 @@ begin
         if (grd.Cells[6, aRow] = 'c') then
           grd.Canvas.Font.Color := $968B80
         else if (amt > 0) then
-          grd.Canvas.Font.Color := $549922
+          grd.Canvas.Font.Color := $006FC86F // $549922
         else if (amt < 0) then
-          grd.Canvas.Font.Color := $2B39C0
+          grd.Canvas.Font.Color := $006C6CDE // $2B39C0
         else
           grd.Canvas.Font.Color := $3D2F21;
       end;
@@ -176,9 +176,9 @@ begin
       if TryStrToCurr(str, amt) then
       begin
         if (amt > 0) then
-          grd.Canvas.Font.Color := $549922
+          grd.Canvas.Font.Color := $006FC86F // $549922
         else if (amt < 0) then
-          grd.Canvas.Font.Color := $2B39C0;
+          grd.Canvas.Font.Color := $006C6CDE // $2B39C0;
       end;
     end;
   end;

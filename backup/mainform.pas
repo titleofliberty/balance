@@ -138,7 +138,7 @@ begin
   if (gdFixed in aState) then
     grd.Canvas.Brush.Color := clForm
   else if (gdRowHighlight in aState) then
-    grd.Canvas.Brush.Color := $F1D6AE;
+    grd.Canvas.Brush.Color := $311f24; // $F1D6AE;
   //else if ((aRow mod 2) = 0) and (aRow > 0) then
   //  grd.Canvas.Brush.Color := $DFEFD4;
 
@@ -163,9 +163,9 @@ begin
         if (grd.Cells[6, aRow] = 'c') then
           grd.Canvas.Font.Color := $968B80
         else if (amt > 0) then
-          grd.Canvas.Font.Color := $549922
+          grd.Canvas.Font.Color := $006FC86F // $549922
         else if (amt < 0) then
-          grd.Canvas.Font.Color := $2B39C0
+          grd.Canvas.Font.Color := $006C6CDE // $2B39C0
         else
           grd.Canvas.Font.Color := $3D2F21;
       end;
@@ -176,9 +176,9 @@ begin
       if TryStrToCurr(str, amt) then
       begin
         if (amt > 0) then
-          grd.Canvas.Font.Color := $549922
+          grd.Canvas.Font.Color := $006FC86F // $549922
         else if (amt < 0) then
-          grd.Canvas.Font.Color := $2B39C0;
+          grd.Canvas.Font.Color := $006C6CDE // $2B39C0;
       end;
     end;
   end;
@@ -406,7 +406,7 @@ begin
   end;
   lblCredits.Caption := Format('Credits: %s', [FormatCurr('$#,##0.00', c)]);
   lblDebits.Caption := Format('Debits: %s', [FormatCurr('$#,##0.00', d)]);
-  lblBalance.Caption := Format('Credits: %s', [FormatCurr('$#,##0.00', b)]);
+  lblBalance.Caption := Format('Balance: %s', [FormatCurr('$#,##0.00', b)]);
   grdMain.SaveToCSVFile(FFileName);
 end;
 

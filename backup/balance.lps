@@ -21,9 +21,9 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="258"/>
-        <CursorPos X="29" Y="268"/>
-        <FoldState Value=" T8iJ21 T3iW0E3 pjKjg0E116]B5kg064 PiUiM0 T6iX023121111 PBoa]K1ia0A[t47jf0B115[V4]oalb]U0ic277 piZj9652662213]USme4 TMkC21p"/>
+        <TopLine Value="181"/>
+        <CursorPos X="39" Y="141"/>
+        <FoldState Value=" T4603 T7FDn T8iD251 T3iW0E214 pj7m00A7]9Aja0P2 Pi2i80 T6iX0211A PHq2]G1ia0A216]g0mG08[944k30J1 PJP]X0ic27279 piemH23B]$PjW4i"/>
         <UsageCount Value="64"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -34,12 +34,10 @@
         <ComponentName Value="frmTransaction"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="2"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="85"/>
         <CursorPos Y="78"/>
         <UsageCount Value="57"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="descriptions.txt"/>
@@ -64,12 +62,10 @@
         <ComponentName Value="frmOptions"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="1"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="14"/>
         <CursorPos X="9" Y="40"/>
         <UsageCount Value="27"/>
-        <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="balanceframe.pas"/>
@@ -134,20 +130,16 @@
       </Unit>
       <Unit>
         <Filename Value="..\..\..\..\..\usr\share\fpcsrc\3.2.2\rtl\objpas\sysutils\sysinth.inc"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="-1"/>
         <TopLine Value="42"/>
         <CursorPos X="3" Y="57"/>
         <UsageCount Value="12"/>
-        <Loaded Value="True"/>
       </Unit>
     </Units>
     <Debugger>
       <Backend Value="{46F8D863-C46A-4513-87F7-05B4F05262FC}"/>
     </Debugger>
-    <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="optionsform.pas"/>
-      </Position>
+    <JumpHistory HistoryIndex="20">
       <Position>
         <Filename Value="mainform.pas"/>
         <Caret Line="141" Column="17" TopLine="141"/>
@@ -159,42 +151,6 @@
       <Position>
         <Filename Value="mainform.pas"/>
         <Caret Line="278" Column="57" TopLine="270"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="117" TopLine="47"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="49" Column="44" TopLine="10"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="42" Column="23" TopLine="29"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="84" TopLine="78"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="86" TopLine="78"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="87" TopLine="78"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="88" TopLine="78"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="89" TopLine="78"/>
-      </Position>
-      <Position>
-        <Filename Value="transactionform.pas"/>
-        <Caret Line="90" TopLine="78"/>
       </Position>
       <Position>
         <Filename Value="mainform.pas"/>
@@ -263,6 +219,10 @@
       <Position>
         <Filename Value="mainform.pas"/>
         <Caret Line="356" TopLine="68"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="141" Column="34" TopLine="127"/>
       </Position>
     </JumpHistory>
     <RunParams>
