@@ -1,14 +1,14 @@
 object frmTransaction: TfrmTransaction
-  Left = 410
-  Height = 474
-  Top = 478
+  Left = 753
+  Height = 513
+  Top = 216
   Width = 560
   BorderStyle = bsDialog
   Caption = 'Transaction'
   ChildSizing.LeftRightSpacing = 16
   ChildSizing.TopBottomSpacing = 16
   ChildSizing.VerticalSpacing = 8
-  ClientHeight = 474
+  ClientHeight = 513
   ClientWidth = 560
   Font.CharSet = ANSI_CHARSET
   Font.Height = -16
@@ -28,7 +28,7 @@ object frmTransaction: TfrmTransaction
   end
   object calDate: TCalendar
     Left = 16
-    Height = 160
+    Height = 184
     Top = 42
     Width = 225
     DateTime = 45153
@@ -38,7 +38,7 @@ object frmTransaction: TfrmTransaction
   object Label2: TLabel
     Left = 16
     Height = 17
-    Top = 210
+    Top = 232
     Width = 88
     Caption = 'Description'
     ParentColor = False
@@ -46,7 +46,7 @@ object frmTransaction: TfrmTransaction
   object txtDescription: TComboBox
     Left = 16
     Height = 34
-    Top = 236
+    Top = 258
     Width = 225
     AutoComplete = True
     AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
@@ -57,7 +57,7 @@ object frmTransaction: TfrmTransaction
   object Label3: TLabel
     Left = 16
     Height = 17
-    Top = 270
+    Top = 292
     Width = 64
     Caption = 'Category'
     ParentColor = False
@@ -65,7 +65,7 @@ object frmTransaction: TfrmTransaction
   object txtCategory: TComboBox
     Left = 16
     Height = 34
-    Top = 296
+    Top = 318
     Width = 225
     AutoComplete = True
     AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
@@ -76,7 +76,7 @@ object frmTransaction: TfrmTransaction
   object Label4: TLabel
     Left = 16
     Height = 17
-    Top = 368
+    Top = 390
     Width = 48
     Caption = 'Amount'
     ParentColor = False
@@ -84,7 +84,7 @@ object frmTransaction: TfrmTransaction
   object txtAmount: TFloatSpinEdit
     Left = 16
     Height = 34
-    Top = 394
+    Top = 416
     Width = 225
     Alignment = taRightJustify
     TabOrder = 5
@@ -92,7 +92,7 @@ object frmTransaction: TfrmTransaction
   object chkIncome: TCheckBox
     Left = 16
     Height = 23
-    Top = 336
+    Top = 358
     Width = 74
     Caption = 'Credit'
     TabOrder = 3
@@ -100,7 +100,7 @@ object frmTransaction: TfrmTransaction
   object btnSave: TButton
     Left = 336
     Height = 32
-    Top = 424
+    Top = 464
     Width = 100
     Caption = 'Save'
     Default = True
@@ -110,7 +110,7 @@ object frmTransaction: TfrmTransaction
   object btnCancel: TButton
     Left = 444
     Height = 32
-    Top = 424
+    Top = 464
     Width = 100
     Cancel = True
     Caption = 'Cancel'
@@ -120,7 +120,7 @@ object frmTransaction: TfrmTransaction
   object chkCleared: TCheckBox
     Left = 153
     Height = 23
-    Top = 336
+    Top = 358
     Width = 82
     Caption = 'Cleared'
     TabOrder = 4

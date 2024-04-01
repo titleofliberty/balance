@@ -20,7 +20,6 @@
         <ComponentName Value="frmMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <TopLine Value="146"/>
         <CursorPos X="44" Y="154"/>
         <FoldState Value=" T4603 T7FDn T8iD251 T3iW0E214 pj7m00A7]9Aja0P2 Pi2i80 T6iX0211A PHq2]G1ia0A216]g0mG08[944k30J1 PJP]X0ic27279 piemH23B]$PjW4i"/>
@@ -34,10 +33,13 @@
         <ComponentName Value="frmTransaction"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="85"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="78"/>
         <CursorPos Y="78"/>
         <UsageCount Value="57"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="descriptions.txt"/>
