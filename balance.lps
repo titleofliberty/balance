@@ -20,9 +20,10 @@
         <ComponentName Value="frmMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <TopLine Value="146"/>
-        <CursorPos X="44" Y="154"/>
-        <FoldState Value=" T4603 T7FDn T8iD251 T3iW0E214 pj7m00A7]9Aja0P2 Pi2i80 T6iX0211A PHq2]G1ia0A216]g0mG08[944k30J1 PJP]X0ic27279 piemH23B]$PjW4i"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="308"/>
+        <CursorPos X="16" Y="325"/>
+        <FoldState Value=" T4603 T7FDn T8iD251 T3iW0E3 pjKjg0E515 pkVm60P2 Pi2i80 T6iX02417 PLqE]G1ia0A[p47jf0B516]pRmX0J1 PJP]X0ic277 piZj965[94X]9221B Pibl04 TMkC21U"/>
         <UsageCount Value="64"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -33,7 +34,6 @@
         <ComponentName Value="frmTransaction"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="78"/>
         <CursorPos Y="78"/>
@@ -64,10 +64,12 @@
         <ComponentName Value="frmOptions"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="14"/>
-        <CursorPos X="9" Y="40"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="15"/>
+        <CursorPos X="3" Y="42"/>
         <UsageCount Value="27"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="balanceframe.pas"/>
@@ -141,7 +143,7 @@
     <Debugger>
       <Backend Value="{46F8D863-C46A-4513-87F7-05B4F05262FC}"/>
     </Debugger>
-    <JumpHistory HistoryIndex="20">
+    <JumpHistory HistoryIndex="23">
       <Position>
         <Filename Value="mainform.pas"/>
         <Caret Line="141" Column="17" TopLine="141"/>
@@ -225,6 +227,18 @@
       <Position>
         <Filename Value="mainform.pas"/>
         <Caret Line="141" Column="34" TopLine="127"/>
+      </Position>
+      <Position>
+        <Filename Value="optionsform.pas"/>
+        <Caret Line="41" Column="9" TopLine="14"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="110" TopLine="110"/>
+      </Position>
+      <Position>
+        <Filename Value="mainform.pas"/>
+        <Caret Line="320" Column="31" TopLine="220"/>
       </Position>
     </JumpHistory>
     <RunParams>

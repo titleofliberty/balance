@@ -8,9 +8,9 @@ Amazon Marketplace
 Amazon Prime
 Appliance Parts Pros
 Arbys
-AT&T Prepaid
 Atami Express
 ATM
+AT&T Prepaid
 Autozone
 Big Lots
 Bitwarden
@@ -60,11 +60,11 @@ Robert Half
 Rock Auto
 Rosa Clark Medical Clinic
 Ruby Tuesday
-SC State Treasury
 SCDMV
 SCGov
 Schlotzskys
 SchoolRecord
+SC State Treasury
 Securitas
 Seneca Appliance Repair
 Seneca Family Restaurant

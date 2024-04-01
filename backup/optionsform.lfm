@@ -45,20 +45,20 @@ object frmOptions: TfrmOptions
     WordWrap = False
   end
   object Button1: TButton
-    Left = 404
-    Height = 30
+    Left = 352
+    Height = 32
     Top = 336
-    Width = 75
+    Width = 100
     Caption = 'Ok'
     Default = True
     ModalResult = 1
     TabOrder = 2
   end
   object Button2: TButton
-    Left = 489
-    Height = 30
+    Left = 464
+    Height = 32
     Top = 336
-    Width = 75
+    Width = 100
     Cancel = True
     Caption = 'Cancel'
     ModalResult = 2

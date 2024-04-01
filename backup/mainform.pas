@@ -151,7 +151,7 @@ begin
       if grd.Cells[6, aRow] = 'c' then
         grd.Canvas.Font.Color := $968B80
       else if (gdRowHighlight in aState) then
-        grd.Canvas.Font.Color := $000000
+        grd.Canvas.Font.Color := $ffffff // $000000
       else
         grd.Canvas.Font.Color := $ffffff;
     end
@@ -308,10 +308,16 @@ end;
 procedure TfrmMain.mnuMainToolsOptionsClick(Sender: TObject);
 var
   frm: TfrmOptions;
+  lst: TStringList;
 begin
   frm := TfrmOptions.Create(Self);
   if frm.ShowModal = mrOK then
   begin
+    lst := TStringList.Create;
+    lst.Sorted := true;
+    lst.Duplicates := dupIgnore;
+    lst.AddStrings(frm.txtDescriptions.Lines, true);
+    frm.txtDescriptions.Lines.AddStrings(lst, true);
     frm.txtDescriptions.Lines.SaveToFile('descriptions.txt');
     frm.txtCategorys.Lines.SaveToFile('categories.txt');
   end;

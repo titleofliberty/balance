@@ -308,11 +308,23 @@ end;
 procedure TfrmMain.mnuMainToolsOptionsClick(Sender: TObject);
 var
   frm: TfrmOptions;
+  lst: TStringList;
 begin
   frm := TfrmOptions.Create(Self);
   if frm.ShowModal = mrOK then
   begin
+    lst := TStringList.Create;
+    lst.Sorted := true;
+    lst.Duplicates := dupIgnore;
+    lst.AddStrings(frm.txtDescriptions.Lines, true);
+    frm.txtDescriptions.Lines.AddStrings(lst, true);
     frm.txtDescriptions.Lines.SaveToFile('descriptions.txt');
+
+    lst := TStringList.Create;
+    lst.Sorted := true;
+    lst.Duplicates := dupIgnore;
+    lst.AddStrings(frm.txtCategorys.Lines, true);
+    frm.txtCategorys.Lines.AddStrings(lst, true);
     frm.txtCategorys.Lines.SaveToFile('categories.txt');
   end;
   frm.Free;
