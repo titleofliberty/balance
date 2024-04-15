@@ -11,7 +11,7 @@ object frmMain: TfrmMain
   ClientHeight = 564
   ClientWidth = 848
   Font.CharSet = ANSI_CHARSET
-  Font.Height = -16
+  Font.Height = -19
   Font.Name = 'Ubuntu Mono'
   Font.Pitch = fpFixed
   Font.Quality = fqDraft
@@ -161,8 +161,8 @@ object frmMain: TfrmMain
   LCLVersion = '3.2.0.0'
   object grdMain: TStringGrid
     Left = 8
-    Height = 468
-    Top = 48
+    Height = 452
+    Top = 56
     Width = 832
     Align = alClient
     AutoEdit = False
@@ -173,7 +173,7 @@ object frmMain: TfrmMain
     Flat = True
     Font.CharSet = ANSI_CHARSET
     Font.Color = clWhite
-    Font.Height = -16
+    Font.Height = -19
     Font.Name = 'Ubuntu Mono'
     Font.Pitch = fpFixed
     Font.Quality = fqDraft
@@ -189,16 +189,16 @@ object frmMain: TfrmMain
   end
   object pnlTools: TPanel
     Left = 8
-    Height = 32
+    Height = 40
     Top = 8
     Width = 832
     Align = alTop
     BevelOuter = bvNone
     ChildSizing.HorizontalSpacing = 4
-    ClientHeight = 32
+    ClientHeight = 40
     ClientWidth = 832
     Font.CharSet = ANSI_CHARSET
-    Font.Height = -16
+    Font.Height = -19
     Font.Name = 'Ubuntu Mono'
     Font.Pitch = fpFixed
     Font.Quality = fqDraft
@@ -206,7 +206,7 @@ object frmMain: TfrmMain
     TabOrder = 1
     object btnClear: TSpeedButton
       Left = 800
-      Height = 32
+      Height = 40
       Top = 0
       Width = 32
       Align = alRight
@@ -249,17 +249,17 @@ object frmMain: TfrmMain
       OnClick = btnClearClick
     end
     object txtFilter: TEdit
-      Left = 652
-      Height = 32
+      Left = 596
+      Height = 40
       Top = 0
-      Width = 144
+      Width = 200
       Align = alRight
       TabOrder = 0
       OnChange = txtFilterChange
     end
     object btnInsert: TSpeedButton
       Left = 0
-      Height = 32
+      Height = 40
       Top = 0
       Width = 111
       Align = alLeft
@@ -304,7 +304,7 @@ object frmMain: TfrmMain
     end
     object btnDelete: TSpeedButton
       Left = 115
-      Height = 32
+      Height = 40
       Top = 0
       Width = 111
       Align = alLeft
@@ -350,24 +350,24 @@ object frmMain: TfrmMain
   end
   object pnlStatus: TPanel
     Left = 8
-    Height = 32
-    Top = 524
+    Height = 40
+    Top = 516
     Width = 832
     Align = alBottom
-    ClientHeight = 32
+    ClientHeight = 40
     ClientWidth = 832
     TabOrder = 2
     object lblBalance: TLabel
-      Left = 687
-      Height = 30
+      Left = 669
+      Height = 38
       Top = 1
-      Width = 144
+      Width = 162
       Align = alRight
       BorderSpacing.Left = 16
       Caption = 'Balance: $#,##0.00'
       Font.CharSet = ANSI_CHARSET
       Font.Color = 16757603
-      Font.Height = -16
+      Font.Height = -19
       Font.Name = 'Ubuntu Mono'
       Font.Pitch = fpFixed
       Font.Quality = fqDraft
@@ -375,16 +375,16 @@ object frmMain: TfrmMain
       ParentFont = False
     end
     object lblDebits: TLabel
-      Left = 535
-      Height = 30
+      Left = 500
+      Height = 38
       Top = 1
-      Width = 136
+      Width = 153
       Align = alRight
       BorderSpacing.Left = 16
       Caption = 'Debits: $#,##0.00'
       Font.CharSet = ANSI_CHARSET
       Font.Color = 7105758
-      Font.Height = -16
+      Font.Height = -19
       Font.Name = 'Ubuntu Mono'
       Font.Pitch = fpFixed
       Font.Quality = fqDraft
@@ -392,16 +392,16 @@ object frmMain: TfrmMain
       ParentFont = False
     end
     object lblCredits: TLabel
-      Left = 375
-      Height = 30
+      Left = 322
+      Height = 38
       Top = 1
-      Width = 144
+      Width = 162
       Align = alRight
       BorderSpacing.Left = 16
       Caption = 'Credits: $#,##0.00'
       Font.CharSet = ANSI_CHARSET
       Font.Color = 7325807
-      Font.Height = -16
+      Font.Height = -19
       Font.Name = 'Ubuntu Mono'
       Font.Pitch = fpFixed
       Font.Quality = fqDraft

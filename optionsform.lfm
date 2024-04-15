@@ -7,16 +7,16 @@ object frmOptions: TfrmOptions
   Caption = 'Options'
   ClientHeight = 386
   ClientWidth = 580
-  Font.Height = -16
-  Font.Name = 'Sans'
+  Font.Height = -19
+  Font.Name = 'Ubuntu Mono'
   OnCreate = FormCreate
   Position = poOwnerFormCenter
   LCLVersion = '3.2.0.0'
   object Label1: TLabel
     Left = 16
-    Height = 19
+    Height = 20
     Top = 16
-    Width = 98
+    Width = 108
     Caption = 'Descriptions'
   end
   object txtDescriptions: TMemo
@@ -30,9 +30,9 @@ object frmOptions: TfrmOptions
   end
   object Label2: TLabel
     Left = 304
-    Height = 19
+    Height = 20
     Top = 16
-    Width = 86
+    Width = 90
     Caption = 'Categories'
   end
   object txtCategorys: TMemo
@@ -46,7 +46,7 @@ object frmOptions: TfrmOptions
   end
   object Button1: TButton
     Left = 352
-    Height = 32
+    Height = 40
     Top = 336
     Width = 100
     Caption = 'Ok'
@@ -56,7 +56,7 @@ object frmOptions: TfrmOptions
   end
   object Button2: TButton
     Left = 464
-    Height = 32
+    Height = 40
     Top = 336
     Width = 100
     Cancel = True

@@ -20,10 +20,9 @@
         <ComponentName Value="frmMain"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="308"/>
-        <CursorPos X="3" Y="313"/>
-        <FoldState Value=" T4603 T7FDn T8iD251 T3iW0E3 pjKjg0E515 pkVm00P2 Pi2i80 T6iX02417 PLq[G41ia0A[p47jf0B516]pRmR0J1 PJP]X0ic277 piZj965[94X]9221B Pibkb4 TMkC21+"/>
+        <TopLine Value="307"/>
+        <CursorPos X="16" Y="325"/>
+        <FoldState Value=" T4603 T7FDn T8iD251 T3iW0E3 pjKjg0E515 pkVm60P2 Pi2i80 T6iX02417 PLqE]G1ia0A[p47jf0B516]pRmX0J1 PJP]X0ic277 piZj965[94X]9221B Pibl04 TMkC21U"/>
         <UsageCount Value="64"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
@@ -34,6 +33,7 @@
         <ComponentName Value="frmTransaction"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <TopLine Value="78"/>
         <CursorPos Y="78"/>
@@ -65,7 +65,7 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="15"/>
+        <TopLine Value="14"/>
         <CursorPos X="3" Y="42"/>
         <UsageCount Value="27"/>
         <Loaded Value="True"/>
