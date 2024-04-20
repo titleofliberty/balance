@@ -2,7 +2,6 @@ Adams Products
 Air Today
 Aldi
 Allstate
-Amac
 Amazon
 Amazon Marketplace
 Amazon Prime
@@ -17,6 +16,7 @@ Bitwarden
 Blue Cross
 Blue Ridge Electric
 Bountyland
+Canteen
 Cash
 Cato
 Chesapeake UHC
